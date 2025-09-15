@@ -1,0 +1,21 @@
+{
+	"name": "@nivalis/biome-config",
+	"version": "0.0.1",
+	"description": "Configuration for biome",
+	"main": "./biome.jsonc",
+	"files": [
+		"biome.jsonc"
+	],
+	"keywords": [
+		"ultracite",
+		"biome",
+		"linter",
+		"formatter",
+		"fixer"
+	],
+	"packageManager": "pnpm@10.15.1",
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	}
+}
