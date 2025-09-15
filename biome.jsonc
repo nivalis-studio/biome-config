@@ -4,7 +4,12 @@
     "enabled": true,
     "actions": {
       "source": {
-        "organizeImports": "on",
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [{ "type": false }]
+          }
+        },
         "useSortedAttributes": "on",
         "useSortedKeys": "off"
       }
@@ -473,7 +478,16 @@
           "level": "error",
           "options": {
             "attributes": ["class", "className", "classList"],
-            "functions": ["clsx", "cva", "tw", "tw.*", "twMerge", "cn", "twJoin", "tv"]
+            "functions": [
+              "clsx",
+              "cva",
+              "tw",
+              "tw.*",
+              "twMerge",
+              "cn",
+              "twJoin",
+              "tv"
+            ]
           }
         },
 
@@ -660,7 +674,7 @@
   },
   "overrides": [
     {
-      "includes": ["**/*.json"],
+      "includes": ["**/*.json", "**/*.jsonc"],
       "formatter": {
         "indentStyle": "space"
       }
