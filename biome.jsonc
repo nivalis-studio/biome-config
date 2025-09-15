@@ -645,7 +645,9 @@
         "useDefaultSwitchClauseLast": "error",
         "useGetterReturn": "error",
         "useGuardForIn": "error",
-        "useIterableCallbackReturn": "error"
+        "useIterableCallbackReturn": "error",
+
+        "noUnknownAtRules": "off"
       },
       "performance": {
         "recommended": true,
