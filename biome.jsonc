@@ -693,32 +693,6 @@
       }
     },
     {
-      "includes": [
-        "*.config.{js,ts,mjs,cjs,mts,cts}",
-        "vite.config.*",
-        "vitest.config.*",
-        "jest.config.*",
-        "rollup.config.*",
-        "webpack.config.*",
-        "eslint.config.*",
-        "prettier.config.*",
-        "stylelint.config.*",
-        "commitlint.config.*",
-        "lint-staged.config.*",
-        "postcss.config.*",
-        "tailwind.config.*",
-        "playwright.config.*",
-        "cypress.config.*",
-        "babel.config.*",
-        "metro.config.*",
-        "next.config.*",
-        "nuxt.config.*",
-        "astro.config.*",
-        "svelte.config.*",
-        "tsup.config.*"
-      ]
-    },
-    {
       "includes": ["**/*.{test,spec}.{ts,tsx,js,jsx}", "**/__tests__/**/*"],
       "linter": {
         "rules": {
