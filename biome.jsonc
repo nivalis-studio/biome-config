@@ -116,7 +116,7 @@
     "formatter": {
       "lineEnding": "lf",
       "lineWidth": 80,
-      "quoteStyle": "double"
+      "quoteStyle": "single"
     },
     "parser": {
       "allowWrongLineComments": false,
