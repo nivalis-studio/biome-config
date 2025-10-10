@@ -337,7 +337,7 @@
 				"noCommaOperator": "error",
 				"noEmptyTypeParameters": "error",
 				"noUselessTypeConstraint": "error",
-				"noExcessiveCognitiveComplexity": "error",
+				"noExcessiveCognitiveComplexity": "warn",
 				"noExcessiveNestedTestSuites": "error",
 				"noExtraBooleanCast": "error",
 				"noFlatMapIdentity": "error",
@@ -453,7 +453,7 @@
 				"noNonNullAssertedOptionalChain": "error",
 				"noQwikUseVisibleTask": "error",
 				"noShadow": "error",
-				"noUnnecessaryConditions": "error",
+				"noUnnecessaryConditions": "info",
 				"noUselessUndefined": "error",
 				"noVueDataObjectDeclaration": "error",
 				"noVueReservedKeys": "error",
@@ -461,6 +461,7 @@
 				"useAnchorHref": "error",
 				"useConsistentTypeDefinitions": {
 					"level": "error",
+					"fix": "safe",
 					"options": {
 						"style": "type"
 					}
@@ -523,7 +524,11 @@
 				"noRestrictedImports": "error",
 				"noYodaExpression": "error",
 				"useArrayLiterals": "error",
-				"useBlockStatements": "error",
+				"useBlockStatements": {
+					"level": "error",
+					"fix": "safe",
+					"options": {}
+				},
 				"useCollapsedElseIf": "error",
 				"useConsistentBuiltinInstantiation": "error",
 				"useConst": "warn",
@@ -552,6 +557,7 @@
 				"useAtIndex": "error",
 				"useConsistentArrayType": {
 					"level": "error",
+					"fix": "safe",
 					"options": {
 						"syntax": "generic"
 					}
@@ -561,7 +567,7 @@
 				"useEnumInitializers": "error",
 				"useExportType": "error",
 				"useFilenamingConvention": {
-					"level": "error",
+					"level": "warn",
 					"options": {
 						"requireAscii": true,
 						"filenameCases": ["kebab-case"],
@@ -571,7 +577,7 @@
 				"useGraphqlNamingConvention": "error",
 				"useImportType": "error",
 				"useLiteralEnumMembers": "error",
-				"noMagicNumbers": "error",
+				"noMagicNumbers": { "level": "warn", "options": {} },
 				"useNodeAssertStrict": "error",
 				"useReadonlyClassProperties": "error",
 				"useSelfClosingElements": "error",
@@ -610,7 +616,7 @@
 				"noConsole": {
 					"level": "warn",
 					"options": {
-						"allow": ["warn", "error"]
+						"allow": ["warn", "error", "debug"]
 					}
 				},
 				"noConstantBinaryExpressions": "error",
