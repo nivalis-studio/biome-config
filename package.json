@@ -4,21 +4,22 @@
 	"description": "Configuration for biome",
 	"main": "./biome.json",
 	"scripts": {
+		"prepare": "lefthook install",
 		"lint": "biome check",
 		"lint:fix": "biome check --write"
 	},
 	"files": ["biome.json"],
 	"keywords": ["ultracite", "biome", "linter", "formatter", "fixer"],
-	"packageManager": "pnpm@10.15.1",
+	"packageManager": "pnpm@10.19.0",
 	"publishConfig": {
 		"access": "public",
 		"registry": "https://registry.npmjs.org/"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.2.5",
+		"@biomejs/biome": "2.2.7",
 		"@commitlint/cli": "20.1.0",
 		"@commitlint/config-conventional": "20.0.0",
-		"@nivalis/biome-config": "0.1.3",
-		"lefthook": "1.13.6"
+		"@nivalis/biome-config": "0.1.4",
+		"lefthook": "2.0.0"
 	}
 }
