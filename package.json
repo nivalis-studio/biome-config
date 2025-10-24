@@ -1,6 +1,6 @@
 {
 	"name": "@nivalis/biome-config",
-	"version": "2.2.9",
+	"version": "2.3.0",
 	"description": "Configuration for biome",
 	"main": "./biome.json",
 	"scripts": {
