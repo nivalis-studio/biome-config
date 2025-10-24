@@ -1,6 +1,6 @@
 {
 	"name": "@nivalis/biome-config",
-	"version": "0.1.4",
+	"version": "2.2.9",
 	"description": "Configuration for biome",
 	"main": "./biome.json",
 	"scripts": {
@@ -9,14 +9,14 @@
 		"lint:fix": "biome check --write"
 	},
 	"files": ["biome.json"],
-	"keywords": ["ultracite", "biome", "linter", "formatter", "fixer"],
+	"keywords": ["biome", "linter", "formatter", "fixer"],
 	"packageManager": "pnpm@10.19.0",
 	"publishConfig": {
 		"access": "public",
 		"registry": "https://registry.npmjs.org/"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.2.7",
+		"@biomejs/biome": "2.3.0",
 		"@commitlint/cli": "20.1.0",
 		"@commitlint/config-conventional": "20.0.0",
 		"@nivalis/biome-config": "0.1.4",
