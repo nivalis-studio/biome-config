@@ -16,10 +16,10 @@
 		"registry": "https://registry.npmjs.org/"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.4",
-		"@commitlint/cli": "20.1.0",
-		"@commitlint/config-conventional": "20.0.0",
-		"@nivalis/biome-config": "2.3.3",
-		"lefthook": "2.0.2"
+		"@biomejs/biome": "catalog:",
+		"@commitlint/cli": "catalog:",
+		"@commitlint/config-conventional": "catalog:",
+		"@nivalis/biome-config": "catalog:",
+		"lefthook": "catalog:"
 	}
 }
