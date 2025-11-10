@@ -19,7 +19,6 @@
 		"@biomejs/biome": "catalog:",
 		"@commitlint/cli": "catalog:",
 		"@commitlint/config-conventional": "catalog:",
-		"@nivalis/biome-config": "catalog:",
 		"lefthook": "catalog:"
 	}
 }
