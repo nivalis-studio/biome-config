@@ -3,6 +3,7 @@
 	"version": "2.3.6",
 	"description": "Configuration for biome",
 	"main": "./biome.json",
+	"license": "MIT",
 	"scripts": {
 		"prepare": "lefthook install",
 		"lint": "biome check",
