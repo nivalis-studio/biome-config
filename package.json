@@ -4,6 +4,16 @@
 	"description": "Configuration for biome",
 	"main": "./biome.json",
 	"license": "MIT",
+	"homepage": "https://github.com/nivalis-studio/biome-config#readme",
+	"repository": {
+		"url": "git+https://github.com/nivalis-studio/biome-config.git"
+	},
+	"bugs": {
+		"url": "https://github.com/nivalis-studio/biome-config/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"prepare": "lefthook install",
 		"lint": "biome check",
@@ -12,10 +22,6 @@
 	"files": ["biome.json"],
 	"keywords": ["biome", "linter", "formatter", "fixer"],
 	"packageManager": "pnpm@10.23.0",
-	"publishConfig": {
-		"access": "public",
-		"registry": "https://registry.npmjs.org/"
-	},
 	"devDependencies": {
 		"@biomejs/biome": "catalog:",
 		"@commitlint/cli": "catalog:",

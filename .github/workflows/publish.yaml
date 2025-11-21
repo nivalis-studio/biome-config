@@ -1,6 +1,7 @@
 name: Publish Package
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - "v*"
@@ -21,10 +22,21 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - uses: pnpm/action-setup@v4
+      - run: pnpm install --frozen-lockfile
 
       # Ensure npm 11.5.1 or later is installed
       - name: Update npm
         run: npm install -g npm@latest
 
-      - run: pnpm install --frozen-lockfile
-      - run: npm publish
+      - name: Publish to npm
+        run: npm publish
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          registry-url: https://npm.pkg.github.com
+
+      - name: Publish to GitHub Packages
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
