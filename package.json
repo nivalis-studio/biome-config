@@ -22,6 +22,9 @@
 	"files": ["biome.json"],
 	"keywords": ["biome", "linter", "formatter", "fixer"],
 	"packageManager": "pnpm@10.24.0",
+	"peerDependencies": {
+		"@biomejs/biome": ">=2"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "catalog:",
 		"@commitlint/cli": "catalog:",
