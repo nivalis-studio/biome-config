@@ -21,7 +21,7 @@
 	},
 	"files": ["biome.json"],
 	"keywords": ["biome", "linter", "formatter", "fixer"],
-	"packageManager": "pnpm@10.27.0",
+	"packageManager": "pnpm@10.28.1",
 	"peerDependencies": {
 		"@biomejs/biome": ">=2"
 	},
