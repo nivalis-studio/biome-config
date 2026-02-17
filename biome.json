@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.3.14/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.4.2/schema.json",
 	"assist": {
 		"enabled": true,
 		"actions": {
@@ -380,7 +380,8 @@
 				"useSimpleNumberKeys": "error",
 				"useSimplifiedLogicExpression": "error",
 				"useRegexLiterals": "error",
-
+				"noUselessUndefined": "error",
+				"useMaxParams": "error",
 				"noExcessiveLinesPerFunction": "off",
 				"noImportantStyles": "off"
 			},
@@ -455,20 +456,20 @@
 				"noUnknownPseudoElement": "error",
 				"noUnknownTypeSelector": "error",
 				"noUnknownUnit": "error",
-				"noUnmatchableAnbSelector": "error"
+				"noUnmatchableAnbSelector": "error",
+
+				"noNextAsyncClientComponent": "error",
+				"noVueDataObjectDeclaration": "error",
+				"noVueReservedKeys": "error",
+				"noVueReservedProps": "error",
+				"noUnresolvedImports": "off"
 			},
 			"nursery": {
 				"recommended": true,
 				"noMisusedPromises": "error",
-				"noNextAsyncClientComponent": "error",
 				"noShadow": "error",
 				"noUnnecessaryConditions": "info",
-				"noUselessUndefined": "error",
-				"noVueDataObjectDeclaration": "error",
-				"noVueReservedKeys": "error",
-				"noVueReservedProps": "error",
 				"useExhaustiveSwitchCases": "error",
-				"useMaxParams": "error",
 				"useExplicitType": "off",
 				"useSortedClasses": {
 					"fix": "safe",
@@ -487,10 +488,7 @@
 						]
 					}
 				},
-
-				"noFloatingPromises": "error",
-				"noUnresolvedImports": "off",
-				"noImportCycles": "error"
+				"noFloatingPromises": "error"
 			},
 			"style": {
 				"recommended": true,
@@ -655,7 +653,7 @@
 				"useGetterReturn": "error",
 				"useGuardForIn": "error",
 				"useIterableCallbackReturn": "error",
-
+				"noImportCycles": "error",
 				"noUnknownAtRules": "off"
 			},
 			"performance": {
