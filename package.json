@@ -21,7 +21,7 @@
 	},
 	"files": ["biome.json"],
 	"keywords": ["biome", "linter", "formatter", "fixer"],
-	"packageManager": "pnpm@10.32.1",
+	"packageManager": "pnpm@10.33.0",
 	"peerDependencies": {
 		"@biomejs/biome": ">=2"
 	},
@@ -29,6 +29,8 @@
 		"@biomejs/biome": "catalog:",
 		"@commitlint/cli": "catalog:",
 		"@commitlint/config-conventional": "catalog:",
-		"lefthook": "catalog:"
+		"bumpp": "catalog:",
+		"lefthook": "catalog:",
+		"taze": "catalog:"
 	}
 }
