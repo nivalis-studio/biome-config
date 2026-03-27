@@ -63,7 +63,17 @@ Running `pnpm lint` fails on style or lint errors, while `pnpm lint:fix` auto-fo
 
 - `pnpm lint` – run Biome in check mode.
 - `pnpm lint:fix` – run Biome with `--write` to apply safe fixes.
+- `pnpm insights:normalize` – normalize `--reporter=json` output into a stable artifact.
+- `pnpm insights:summary` – aggregate normalized artifacts into markdown insights.
 - `pnpm prepare` – installs Lefthook so Git hooks can run Biome before you commit.
+
+## Cross-Repo Biome Insights
+
+This repository includes an artifact-first reusable GitHub workflow:
+
+- `.github/workflows/biome-insights-artifact.yaml`
+
+See `docs/biome-insights-artifact-first.md` for rollout details and artifact schema.
 
 ## Publishing
 

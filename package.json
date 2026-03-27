@@ -17,7 +17,9 @@
 	"scripts": {
 		"prepare": "lefthook install",
 		"lint": "biome check",
-		"lint:fix": "biome check --write"
+		"lint:fix": "biome check --write",
+		"insights:normalize": "node ./scripts/biome-insights/normalize.mjs",
+		"insights:summary": "node ./scripts/biome-insights/summarize.mjs"
 	},
 	"files": ["biome.json"],
 	"keywords": ["biome", "linter", "formatter", "fixer"],
