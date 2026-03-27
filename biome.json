@@ -91,7 +91,9 @@
 			"!!**/*.min.*",
 			"!**/LICENSE*",
 			"!!**/__snapshots__",
-			"!**/components.d.ts"
+			"!**/components.d.ts",
+			"!.entire",
+			"!.opencode"
 		]
 	},
 	"formatter": {
