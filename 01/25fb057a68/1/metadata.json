@@ -1,0 +1,36 @@
+{
+  "cli_version": "0.5.2",
+  "checkpoint_id": "0125fb057a68",
+  "session_id": "ses_29e1f1c97ffesfT1llQ2jmcQIv",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-06T18:26:20.718659Z",
+  "branch": "pnodet-3",
+  "checkpoints_count": 2,
+  "files_touched": [
+    ".github/workflows/biome-insights-artifact.yaml",
+    "scripts/biome-insights/upsert-pr-comment.cjs",
+    "scripts/biome-insights/upsert-pr-comment.test.cjs"
+  ],
+  "agent": "OpenCode",
+  "model": "gpt-5.3-codex",
+  "turn_id": "6788d7f39702",
+  "token_usage": {
+    "input_tokens": 26176,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 45056,
+    "output_tokens": 2781,
+    "api_call_count": 3
+  },
+  "session_metrics": {
+    "turn_count": 7
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-04-06T18:26:20.708318Z",
+    "agent_lines": 425,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 425,
+    "agent_percentage": 100
+  }
+}

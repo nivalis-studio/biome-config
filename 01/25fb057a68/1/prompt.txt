@@ -1,0 +1,25 @@
+Let's review @.github/workflows/biome-insights-artifact.yaml this github action, what's the purpose and how the code is well structured and reliable.
+
+---
+
+Why isn't shared-config-version required?
+
+---
+
+How could we improve this CI code?
+
+---
+
+I want to reduce the code and simplify and cleanup can you have a look?
+
+---
+
+ok
+
+---
+
+Ok
+
+---
+
+Can we use act to test this?
