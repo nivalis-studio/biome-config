@@ -1,0 +1,34 @@
+What do you recommand?
+
+---
+
+Okay let's do the extraction
+
+---
+
+Can the extraction be done in the biome config reusable action?
+
+---
+
+Let's keep this for later, let's hardcode the value for now
+
+---
+
+1
+
+---
+
+Ok
+
+---
+
+Run BIOME_VERSION=$(biome --version)
+file:///home/runner/work/nextjs-template/nextjs-template/.nivalis-biome-config/scripts/biome-insights/normalize.mjs:289
+    throw new Error(
+          ^
+
+Error: Failed to parse input file "/home/runner/work/_temp/biome-raw.json": Unexpected token 'T', "The --json"... is not valid JSON
+    at main (file:///home/runner/work/nextjs-template/nextjs-template/.nivalis-biome-config/scripts/biome-insights/normalize.mjs:289:11)
+    at async file:///home/runner/work/nextjs-template/nextjs-template/.nivalis-biome-config/scripts/biome-insights/normalize.mjs:323:1
+
+Node.js v24.14.1
