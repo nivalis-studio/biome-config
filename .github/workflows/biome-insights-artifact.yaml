@@ -74,6 +74,9 @@ jobs:
           ref: ${{ inputs.config-ref }}
           path: .nivalis-biome-config
 
+      - name: Create output directory
+        run: mkdir -p .biome-insights
+
       - name: Normalize diagnostics artifact
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
@@ -94,6 +97,20 @@ jobs:
             --biome-version "$BIOME_VERSION" \
             --shared-config-version "$SHARED_CONFIG_VERSION" \
             --local-config-hash "$LOCAL_CONFIG_HASH"
+
+      - name: Check output file
+        if: always()
+        run: |
+          echo "=== Checking output file ==="
+          ls -la .biome-insights/ || echo "Directory doesn't exist"
+          if [ -f .biome-insights/biome-normalized.json ]; then
+            echo "File exists, size:"
+            wc -c .biome-insights/biome-normalized.json
+            echo "First 200 chars:"
+            head -c 200 .biome-insights/biome-normalized.json
+          else
+            echo "Output file not found!"
+          fi
 
       - name: Upload normalized artifact
         uses: actions/upload-artifact@v4
