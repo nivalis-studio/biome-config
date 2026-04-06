@@ -280,7 +280,14 @@ const main = async () => {
     );
   }
 
-  const rawContent = await readFile(inputPath, 'utf8');
+  let rawContent;
+  try {
+    rawContent = await readFile(inputPath, 'utf8');
+  } catch {
+    // File doesn't exist or can't be read, create empty result
+    rawContent = '{}';
+  }
+
   let parsed;
   try {
     parsed = JSON.parse(rawContent);

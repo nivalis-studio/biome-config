@@ -44,6 +44,9 @@ jobs:
       - name: Setup Biome
         uses: biomejs/setup-biome@v2
 
+      - name: Check Biome version
+        run: biome --version
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
@@ -53,7 +56,16 @@ jobs:
       - name: Run Biome CI JSON reporter
         id: biome
         continue-on-error: true
-        run: biome ci --json . > "$RUNNER_TEMP/biome-raw.json" 2>&1
+        run: biome ci --json . > "$RUNNER_TEMP/biome-raw.json"
+
+      - name: Debug Biome output
+        if: always()
+        run: |
+          echo "=== Biome raw output (first 500 chars) ==="
+          head -c 500 "$RUNNER_TEMP/biome-raw.json" || echo "File not found or empty"
+          echo ""
+          echo "=== File size ==="
+          wc -c "$RUNNER_TEMP/biome-raw.json" || echo "File not found"
 
       - name: Checkout biome-config scripts
         uses: actions/checkout@v6
