@@ -53,7 +53,7 @@ jobs:
       - name: Run Biome CI JSON reporter
         id: biome
         continue-on-error: true
-        run: biome ci --reporter=json . > "$RUNNER_TEMP/biome-raw.json"
+        run: biome ci --reporter=json . 2>&1 | tee "$RUNNER_TEMP/biome-raw.json"
 
       - name: Checkout biome-config scripts
         uses: actions/checkout@v6
