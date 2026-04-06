@@ -1,0 +1,50 @@
+##[debug]Evaluating condition for step: 'Upload normalized artifact'
+##[debug]Evaluating: success()
+##[debug]Evaluating success:
+##[debug]=> true
+##[debug]Result: true
+##[debug]Starting: Upload normalized artifact
+##[debug]Loading inputs
+##[debug]Evaluating: format('biome-insights-{0}-{1}', github.repository_id, github.run_id)
+##[debug]Evaluating format:
+##[debug]..Evaluating String:
+##[debug]..=> 'biome-insights-{0}-{1}'
+##[debug]..Evaluating Index:
+##[debug]....Evaluating github:
+##[debug]....=> Object
+##[debug]....Evaluating String:
+##[debug]....=> 'repository_id'
+##[debug]..=> '719084316'
+##[debug]..Evaluating Index:
+##[debug]....Evaluating github:
+##[debug]....=> Object
+##[debug]....Evaluating String:
+##[debug]....=> 'run_id'
+##[debug]..=> '24045297573'
+##[debug]=> 'biome-insights-719084316-24045297573'
+##[debug]Result: 'biome-insights-719084316-24045297573'
+##[debug]Loading env
+Run actions/upload-artifact@v4
+  with:
+    name: biome-insights-719084316-24045297573
+    path: .biome-insights/
+    if-no-files-found: error
+    compression-level: 6
+    overwrite: false
+    include-hidden-files: false
+  env:
+    PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+  
+##[debug]followSymbolicLinks 'true'
+##[debug]implicitDescendants 'true'
+##[debug]omitBrokenSymbolicLinks 'true'
+##[debug]excludeHiddenFiles 'true'
+##[debug]followSymbolicLinks 'true'
+##[debug]implicitDescendants 'true'
+##[debug]matchDirectories 'true'
+##[debug]omitBrokenSymbolicLinks 'true'
+##[debug]excludeHiddenFiles 'true'
+##[debug]Search path '/home/runner/work/nextjs-template/nextjs-template/.biome-insights'
+Error: No files were found with the provided path: .biome-insights/. No artifacts will be uploaded.
+##[debug]Node Action run completed with exit code 1
+##[debug]Finishing: Upload normalized artifact
