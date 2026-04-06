@@ -1,0 +1,55 @@
+0s
+0s
+##[debug]Evaluating condition for step: 'Fail when Biome reports diagnostics'
+##[debug]Evaluating: (success() && (steps.biome.outcome == 'failure'))
+##[debug]Evaluating And:
+##[debug]..Evaluating success:
+##[debug]..=> true
+##[debug]..Evaluating Equal:
+##[debug]....Evaluating Index:
+##[debug]......Evaluating Index:
+##[debug]........Evaluating steps:
+##[debug]........=> Object
+##[debug]........Evaluating String:
+##[debug]........=> 'biome'
+##[debug]......=> Object
+##[debug]......Evaluating String:
+##[debug]......=> 'outcome'
+##[debug]....=> 'failure'
+##[debug]....Evaluating String:
+##[debug]....=> 'failure'
+##[debug]..=> true
+##[debug]=> true
+##[debug]Expanded: (true && ('failure' == 'failure'))
+##[debug]Result: true
+##[debug]Starting: Fail when Biome reports diagnostics
+##[debug]Loading inputs
+##[debug]Loading env
+Run exit 1
+  exit 1
+  shell: /usr/bin/bash -e {0}
+  env:
+    PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+##[debug]/usr/bin/bash -e /home/runner/work/_temp/a7607630-0ac9-4ef3-8d72-c9364e6bb96a.sh
+Error: Process completed with exit code 1.
+##[debug]Finishing: Fail when Biome reports diagnostics
+
+---
+
+##[debug]Evaluating condition for step: 'Run Biome CI JSON reporter'
+##[debug]Evaluating: success()
+##[debug]Evaluating success:
+##[debug]=> true
+##[debug]Result: true
+##[debug]Starting: Run Biome CI JSON reporter
+##[debug]Loading inputs
+##[debug]Loading env
+Run biome ci --json . > "$RUNNER_TEMP/biome-raw.json"
+  biome ci --json . > "$RUNNER_TEMP/biome-raw.json"
+  shell: /usr/bin/bash -e {0}
+  env:
+    PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+##[debug]/usr/bin/bash -e /home/runner/work/_temp/483f5cab-dda4-43a7-a5f7-2ba0b5944861.sh
+Error: `--json` is not expected in this context
+Error: Process completed with exit code 1.
+##[debug]Finishing: Run Biome CI JSON reporter
