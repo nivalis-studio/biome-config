@@ -1,0 +1,9 @@
+How does the github action works?
+
+---
+
+Let's try setting this up in the following repo: /Users/pnodet/git/nivalis/nextjs-template
+
+---
+
+I'm not sure we should use catalog share-config-version

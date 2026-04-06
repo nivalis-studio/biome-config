@@ -1,0 +1,36 @@
+{
+  "cli_version": "0.5.2",
+  "checkpoint_id": "0125fb057a68",
+  "session_id": "ses_29bf628e8ffelXBwsq5WbmcROn",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-06T18:26:20.698817Z",
+  "branch": "pnodet-3",
+  "checkpoints_count": 3,
+  "files_touched": [
+    ".github/workflows/biome-insights-artifact.yaml",
+    "scripts/biome-insights/upsert-pr-comment.cjs",
+    "scripts/biome-insights/upsert-pr-comment.test.cjs"
+  ],
+  "agent": "OpenCode",
+  "model": "kimi-k2.5",
+  "turn_id": "54ba0fee3787",
+  "token_usage": {
+    "input_tokens": 27823,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 66816,
+    "output_tokens": 833,
+    "api_call_count": 4
+  },
+  "session_metrics": {
+    "turn_count": 3
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-04-06T18:26:20.682811Z",
+    "agent_lines": 425,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 425,
+    "agent_percentage": 100
+  }
+}
