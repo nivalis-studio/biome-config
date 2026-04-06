@@ -44,9 +44,6 @@ jobs:
       - name: Setup Biome
         uses: biomejs/setup-biome@v2
 
-      - name: Check Biome version
-        run: biome --version
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
@@ -58,24 +55,12 @@ jobs:
         continue-on-error: true
         run: biome ci --json . > "$RUNNER_TEMP/biome-raw.json"
 
-      - name: Debug Biome output
-        if: always()
-        run: |
-          echo "=== Biome raw output (first 500 chars) ==="
-          head -c 500 "$RUNNER_TEMP/biome-raw.json" || echo "File not found or empty"
-          echo ""
-          echo "=== File size ==="
-          wc -c "$RUNNER_TEMP/biome-raw.json" || echo "File not found"
-
       - name: Checkout biome-config scripts
         uses: actions/checkout@v6
         with:
           repository: ${{ inputs.config-repository }}
           ref: ${{ inputs.config-ref }}
           path: .nivalis-biome-config
-
-      - name: Create output directory
-        run: mkdir -p .biome-insights
 
       - name: Normalize diagnostics artifact
         id: normalize
@@ -99,38 +84,6 @@ jobs:
             --biome-version "$BIOME_VERSION" \
             --shared-config-version "$SHARED_CONFIG_VERSION" \
             --local-config-hash "$LOCAL_CONFIG_HASH"
-
-      - name: Ensure output file exists
-        if: always()
-        run: |
-          set -x
-          pwd
-          ls -la
-          mkdir -p .biome-insights
-          chmod 755 .biome-insights
-          echo "Created directory, listing:"
-          ls -la .biome-insights/ || echo "Directory listing failed"
-          if [ ! -f .biome-insights/biome-normalized.json ]; then
-            echo '{"generatedAt":"'$(date -Iseconds)'","run":{"repo":"${{ github.repository }}","sha":"${{ github.sha }}","runId":"${{ github.run_id }}"},"schemaVersion":1,"summary":{"diagnostics":0,"errors":0,"fixable":0,"infos":0,"warnings":0},"diagnostics":[]}' > .biome-insights/biome-normalized.json
-            echo "Created fallback empty artifact"
-          fi
-          chmod 644 .biome-insights/biome-normalized.json
-          echo "=== Output file status ==="
-          ls -la .biome-insights/ || echo "Directory doesn't exist"
-          echo "=== File content (first 300 chars) ==="
-          cat .biome-insights/biome-normalized.json | head -c 300 || echo "File not readable"
-
-      - name: Verify artifact before upload
-        run: |
-          echo "Current directory: $(pwd)"
-          echo "Contents:"
-          ls -la
-          echo ".biome-insights contents:"
-          ls -la .biome-insights/ || echo "Directory missing!"
-          echo "File exists check:"
-          test -f .biome-insights/biome-normalized.json && echo "File exists" || echo "File missing!"
-          # Create absolute path reference
-          echo "ARTIFACT_PATH=$(pwd)/.biome-insights" >> "$GITHUB_ENV"
 
       - name: Upload normalized artifact
         uses: actions/upload-artifact@v4
