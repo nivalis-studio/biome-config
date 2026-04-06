@@ -1,0 +1,35 @@
+0s
+##[debug]Evaluating condition for step: 'Fail when Biome reports diagnostics'
+##[debug]Evaluating: (success() && (steps.biome.outcome == 'failure'))
+##[debug]Evaluating And:
+##[debug]..Evaluating success:
+##[debug]..=> true
+##[debug]..Evaluating Equal:
+##[debug]....Evaluating Index:
+##[debug]......Evaluating Index:
+##[debug]........Evaluating steps:
+##[debug]........=> Object
+##[debug]........Evaluating String:
+##[debug]........=> 'biome'
+##[debug]......=> Object
+##[debug]......Evaluating String:
+##[debug]......=> 'outcome'
+##[debug]....=> 'failure'
+##[debug]....Evaluating String:
+##[debug]....=> 'failure'
+##[debug]..=> true
+##[debug]=> true
+##[debug]Expanded: (true && ('failure' == 'failure'))
+##[debug]Result: true
+##[debug]Starting: Fail when Biome reports diagnostics
+##[debug]Loading inputs
+##[debug]Loading env
+Run exit 1
+  exit 1
+  shell: /usr/bin/bash -e {0}
+  env:
+    PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+    ARTIFACT_PATH: /home/runner/work/nextjs-template/nextjs-template/.biome-insights
+##[debug]/usr/bin/bash -e /home/runner/work/_temp/07847c8a-759a-4b14-8fd0-36ee0ae96686.sh
+Error: Process completed with exit code 1.
+##[debug]Finishing: Fail when Biome reports diagnostics
