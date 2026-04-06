@@ -1,0 +1,491 @@
+{
+  "info": {
+    "id": "ses_29bf628e8ffelXBwsq5WbmcROn",
+    "slug": "mighty-planet",
+    "projectID": "c2fa228598587bde6f721bcb3553def3ac03d346",
+    "directory": "/Users/pnodet/git/nivalis/biome-config",
+    "title": "How GitHub Actions work",
+    "version": "1.3.13",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "time": {
+      "created": 1775499859735,
+      "updated": 1775499874590
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1775499859760
+        },
+        "agent": "plan",
+        "model": {
+          "providerID": "moonshotai",
+          "modelID": "kimi-k2.5"
+        },
+        "summary": {
+          "diffs": []
+        },
+        "id": "msg_d6409d7200015XcUoofPH9ovub",
+        "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "How does the github action works?",
+          "id": "prt_d6409d720002OE1qkgn55TmV4A",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d6409d7200015XcUoofPH9ovub"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_d6409d7200015XcUoofPH9ovub",
+        "role": "assistant",
+        "mode": "plan",
+        "agent": "plan",
+        "path": {
+          "cwd": "/Users/pnodet/git/nivalis/biome-config",
+          "root": "/Users/pnodet/git/nivalis/biome-config"
+        },
+        "cost": 0.0130804,
+        "tokens": {
+          "total": 21750,
+          "input": 21428,
+          "output": 66,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 256
+          }
+        },
+        "modelID": "kimi-k2.5",
+        "providerID": "moonshotai",
+        "time": {
+          "created": 1775499859774,
+          "completed": 1775499867160
+        },
+        "finish": "tool-calls",
+        "id": "msg_d6409d73e002sR70FtoZZv8usa",
+        "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn"
+      },
+      "parts": [
+        {
+          "snapshot": "327a83a44db68bd0d1601ab4b4be4378ac78b21a",
+          "type": "step-start",
+          "id": "prt_d6409ee60001wqB7tZuAbMMFSl",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d6409d73e002sR70FtoZZv8usa"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user is asking about how the GitHub Action works. Let me first explore the repository to find any GitHub Actions configuration files.",
+          "time": {
+            "start": 1775499865698,
+            "end": 1775499866425
+          },
+          "id": "prt_d6409ee62001A30MM61FBSsO20",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d6409d73e002sR70FtoZZv8usa"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "glob:0",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/.github/workflows/*.yml"
+            },
+            "output": "No files found",
+            "metadata": {
+              "count": 0,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1775499866872,
+              "end": 1775499866900
+            }
+          },
+          "id": "prt_d6409f13c001DLBXsU0NrG1nLf",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d6409d73e002sR70FtoZZv8usa"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "glob:1",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/.github/workflows/*.yaml"
+            },
+            "output": "/Users/pnodet/git/nivalis/biome-config/.github/workflows/biome-insights-artifact.yaml\n/Users/pnodet/git/nivalis/biome-config/.github/workflows/publish.yaml",
+            "metadata": {
+              "count": 2,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1775499867059,
+              "end": 1775499867077
+            }
+          },
+          "id": "prt_d6409f2fa001F99YZZMXC7Y3QC",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d6409d73e002sR70FtoZZv8usa"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "327a83a44db68bd0d1601ab4b4be4378ac78b21a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 21750,
+            "input": 21428,
+            "output": 66,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 256
+            }
+          },
+          "cost": 0.0130804,
+          "id": "prt_d6409f3c90017xhYOl8iHE42hI",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d6409d73e002sR70FtoZZv8usa"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_d6409d7200015XcUoofPH9ovub",
+        "role": "assistant",
+        "mode": "plan",
+        "agent": "plan",
+        "path": {
+          "cwd": "/Users/pnodet/git/nivalis/biome-config",
+          "root": "/Users/pnodet/git/nivalis/biome-config"
+        },
+        "cost": 0.0026118,
+        "tokens": {
+          "total": 21913,
+          "input": 319,
+          "output": 90,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 21504
+          }
+        },
+        "modelID": "kimi-k2.5",
+        "providerID": "moonshotai",
+        "time": {
+          "created": 1775499867161,
+          "completed": 1775499870491
+        },
+        "finish": "tool-calls",
+        "id": "msg_d6409f419002Wzc1LcxcHR65uw",
+        "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn"
+      },
+      "parts": [
+        {
+          "snapshot": "327a83a44db68bd0d1601ab4b4be4378ac78b21a",
+          "type": "step-start",
+          "id": "prt_d6409f985001GHqWhhoT93pZUa",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d6409f419002Wzc1LcxcHR65uw"
+        },
+        {
+          "type": "reasoning",
+          "text": "I found two GitHub Actions workflow files. Let me read both of them to explain how they work.",
+          "time": {
+            "start": 1775499868550,
+            "end": 1775499869406
+          },
+          "id": "prt_d6409f986001F3hLlDFR30l0a9",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d6409f419002Wzc1LcxcHR65uw"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "read:2",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/Users/pnodet/git/nivalis/biome-config/.github/workflows/biome-insights-artifact.yaml"
+            },
+            "output": "<path>/Users/pnodet/git/nivalis/biome-config/.github/workflows/biome-insights-artifact.yaml</path>\n<type>file</type>\n<content>1: name: Biome Insights Artifact\n2: \n3: on:\n4:   workflow_call:\n5:     inputs:\n6:       config-repository:\n7:         description: Repository that hosts normalizer scripts.\n8:         required: false\n9:         type: string\n10:         default: nivalis-studio/biome-config\n11:       config-ref:\n12:         description: Ref in config repository.\n13:         required: false\n14:         type: string\n15:         default: main\n16:       shared-config-version:\n17:         description: Shared config version/hash used by caller repo.\n18:         required: false\n19:         type: string\n20:         default: ''\n21:       local-config-hash:\n22:         description: Optional local config hash for drift tracking.\n23:         required: false\n24:         type: string\n25:         default: ''\n26: \n27: permissions:\n28:   contents: read\n29:   issues: write\n30:   pull-requests: write\n31: \n32: jobs:\n33:   artifact:\n34:     runs-on: ubuntu-latest\n35:     steps:\n36:       - name: Checkout caller repository\n37:         uses: actions/checkout@v6\n38: \n39:       - name: Setup Node\n40:         uses: actions/setup-node@v6\n41:         with:\n42:           node-version-file: '.node-version'\n43: \n44:       - name: Setup Biome\n45:         uses: biomejs/setup-biome@v2\n46: \n47:       - name: Setup pnpm\n48:         uses: pnpm/action-setup@v4\n49: \n50:       - name: Install dependencies\n51:         run: pnpm install --frozen-lockfile\n52: \n53:       - name: Run Biome CI JSON reporter\n54:         id: biome\n55:         continue-on-error: true\n56:         run: biome ci --reporter=json . > \"$RUNNER_TEMP/biome-raw.json\"\n57: \n58:       - name: Checkout biome-config scripts\n59:         uses: actions/checkout@v6\n60:         with:\n61:           repository: ${{ inputs.config-repository }}\n62:           ref: ${{ inputs.config-ref }}\n63:           path: .nivalis-biome-config\n64: \n65:       - name: Normalize diagnostics artifact\n66:         env:\n67:           BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}\n68:           LOCAL_CONFIG_HASH: ${{ inputs.local-config-hash }}\n69:           PR_NUMBER: ${{ github.event.pull_request.number || '' }}\n70:           SHARED_CONFIG_VERSION: ${{ inputs.shared-config-version }}\n71:         run: |\n72:           BIOME_VERSION=$(biome --version)\n73:           node .nivalis-biome-config/scripts/biome-insights/normalize.mjs \\\n74:             --input \"$RUNNER_TEMP/biome-raw.json\" \\\n75:             --output .biome-insights/biome-normalized.json \\\n76:             --repo \"${{ github.repository }}\" \\\n77:             --pr \"$PR_NUMBER\" \\\n78:             --sha \"${{ github.sha }}\" \\\n79:             --base-sha \"$BASE_SHA\" \\\n80:             --run-id \"${{ github.run_id }}\" \\\n81:             --timestamp \"${{ github.run_started_at }}\" \\\n82:             --biome-version \"$BIOME_VERSION\" \\\n83:             --shared-config-version \"$SHARED_CONFIG_VERSION\" \\\n84:             --local-config-hash \"$LOCAL_CONFIG_HASH\"\n85: \n86:       - name: Upload normalized artifact\n87:         uses: actions/upload-artifact@v4\n88:         with:\n89:           name: biome-insights-${{ github.repository_id }}-${{ github.run_id }}\n90:           path: .biome-insights/\n91:           if-no-files-found: error\n92: \n93:       - name: Upsert PR summary comment for touched-file errors\n94:         if: github.event_name == 'pull_request'\n95:         continue-on-error: true\n96:         uses: actions/github-script@v7\n97:         with:\n98:           script: |\n99:             const { resolve } = require('node:path');\n100:             const scriptPath = resolve(\n101:               '.nivalis-biome-config/scripts/biome-insights/upsert-pr-comment.cjs',\n102:             );\n103:             const {\n104:               upsertBiomeChangedFilesComment,\n105:             } = require(scriptPath);\n106: \n107:             await upsertBiomeChangedFilesComment({\n108:               artifactPath: '.biome-insights/biome-normalized.json',\n109:               context,\n110:               core,\n111:               github,\n112:             });\n113: \n114:       - name: Fail when Biome reports diagnostics\n115:         if: steps.biome.outcome == 'failure'\n116:         run: exit 1\n\n(End of file - total 116 lines)\n</content>",
+            "metadata": {
+              "preview": "name: Biome Insights Artifact\n\non:\n  workflow_call:\n    inputs:\n      config-repository:\n        description: Repository that hosts normalizer scripts.\n        required: false\n        type: string\n        default: nivalis-studio/biome-config\n      config-ref:\n        description: Ref in config repository.\n        required: false\n        type: string\n        default: main\n      shared-config-version:\n        description: Shared config version/hash used by caller repo.\n        required: false\n        type: string\n        default: ''",
+              "truncated": false,
+              "loaded": []
+            },
+            "title": ".github/workflows/biome-insights-artifact.yaml",
+            "time": {
+              "start": 1775499870231,
+              "end": 1775499870249
+            }
+          },
+          "id": "prt_d6409fce1001sIQd5OQDJg6ltS",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d6409f419002Wzc1LcxcHR65uw"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "read:3",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/Users/pnodet/git/nivalis/biome-config/.github/workflows/publish.yaml"
+            },
+            "output": "<path>/Users/pnodet/git/nivalis/biome-config/.github/workflows/publish.yaml</path>\n<type>file</type>\n<content>1: name: Publish Package\n2: \n3: on:\n4:   push:\n5:     tags:\n6:       - \"v*\"\n7: \n8: permissions:\n9:   id-token: write\n10:   contents: read\n11:   packages: write\n12: \n13: jobs:\n14:   publish:\n15:     runs-on: ubuntu-latest\n16:     steps:\n17:       - uses: actions/checkout@v6\n18: \n19:       - uses: actions/setup-node@v6\n20:         with:\n21:           node-version: \"22\"\n22:           registry-url: https://registry.npmjs.org\n23: \n24:       - uses: pnpm/action-setup@v4\n25:       - run: pnpm install --frozen-lockfile\n26: \n27:       # Ensure npm 11.5.1 or later is installed\n28:       - name: Ensure npm supports trusted publishing\n29:         run: npm install -g npm@latest\n30: \n31:       - name: Publish to npm\n32:         run: npm publish\n\n(End of file - total 32 lines)\n</content>",
+            "metadata": {
+              "preview": "name: Publish Package\n\non:\n  push:\n    tags:\n      - \"v*\"\n\npermissions:\n  id-token: write\n  contents: read\n  packages: write\n\njobs:\n  publish:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v6\n\n      - uses: actions/setup-node@v6\n        with:",
+              "truncated": false,
+              "loaded": []
+            },
+            "title": ".github/workflows/publish.yaml",
+            "time": {
+              "start": 1775499870431,
+              "end": 1775499870436
+            }
+          },
+          "id": "prt_d640a00190019LvSDIVRMP8EsD",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d6409f419002Wzc1LcxcHR65uw"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "327a83a44db68bd0d1601ab4b4be4378ac78b21a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 21913,
+            "input": 319,
+            "output": 90,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 21504
+            }
+          },
+          "cost": 0.0026118,
+          "id": "prt_d640a00e5001MuYdaS1pkKUb0a",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d6409f419002Wzc1LcxcHR65uw"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_d6409d7200015XcUoofPH9ovub",
+        "role": "assistant",
+        "mode": "plan",
+        "agent": "plan",
+        "path": {
+          "cwd": "/Users/pnodet/git/nivalis/biome-config",
+          "root": "/Users/pnodet/git/nivalis/biome-config"
+        },
+        "cost": 0.0034366,
+        "tokens": {
+          "total": 23437,
+          "input": 1571,
+          "output": 106,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 21760
+          }
+        },
+        "modelID": "kimi-k2.5",
+        "providerID": "moonshotai",
+        "time": {
+          "created": 1775499870492,
+          "completed": 1775499874563
+        },
+        "finish": "tool-calls",
+        "id": "msg_d640a011c002z9eb3vlZgQmM8V",
+        "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn"
+      },
+      "parts": [
+        {
+          "snapshot": "327a83a44db68bd0d1601ab4b4be4378ac78b21a",
+          "type": "step-start",
+          "id": "prt_d640a083e001a4flvqV5MoE3vp",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d640a011c002z9eb3vlZgQmM8V"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have both GitHub Actions workflow files. Let me also check the scripts that are referenced in the biome-insights workflow to provide a complete picture.",
+          "time": {
+            "start": 1775499872319,
+            "end": 1775499873594
+          },
+          "id": "prt_d640a083f0015BHyYrCf1kVsCk",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d640a011c002z9eb3vlZgQmM8V"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "read:4",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/Users/pnodet/git/nivalis/biome-config/scripts/biome-insights/normalize.mjs"
+            },
+            "output": "<path>/Users/pnodet/git/nivalis/biome-config/scripts/biome-insights/normalize.mjs</path>\n<type>file</type>\n<content>1: import { createHash } from 'node:crypto';\n2: import { mkdir, readFile, writeFile } from 'node:fs/promises';\n3: import { dirname, normalize } from 'node:path';\n4: \n5: const SCHEMA_VERSION = 1;\n6: const CATEGORY_SEGMENTS_MIN = 3;\n7: const FINGERPRINT_LENGTH = 16;\n8: \n9: const parseArguments = argv => {\n10:   const args = {};\n11: \n12:   for (let index = 0; index < argv.length; index += 1) {\n13:     const token = argv[index];\n14: \n15:     if (!token.startsWith('--')) {\n16:       continue;\n17:     }\n18: \n19:     const key = token.slice(2);\n20:     const value = argv[index + 1];\n21: \n22:     if (!value || value.startsWith('--')) {\n23:       args[key] = 'true';\n24:       continue;\n25:     }\n26: \n27:     args[key] = value;\n28:     index += 1;\n29:   }\n30: \n31:   return args;\n32: };\n33: \n34: const classifyPathFamily = value => {\n35:   const filePath = value.toLowerCase();\n36: \n37:   if (\n38:     filePath.includes('__generated__') ||\n39:     filePath.includes('/generated/') ||\n40:     filePath.includes('/codegen/') ||\n41:     filePath.endsWith('.generated.ts') ||\n42:     filePath.endsWith('.generated.tsx')\n43:   ) {\n44:     return 'generated';\n45:   }\n46: \n47:   if (\n48:     filePath.includes('/__tests__/') ||\n49:     filePath.includes('.test.') ||\n50:     filePath.includes('.spec.')\n51:   ) {\n52:     return 'test';\n53:   }\n54: \n55:   if (filePath.endsWith('.md') || filePath.endsWith('.mdx')) {\n56:     return 'docs';\n57:   }\n58: \n59:   if (\n60:     filePath.endsWith('package.json') ||\n61:     filePath.endsWith('tsconfig.json') ||\n62:     filePath.endsWith('.yaml') ||\n63:     filePath.endsWith('.yml')\n64:   ) {\n65:     return 'config';\n66:   }\n67: \n68:   if (filePath.includes('/scripts/') || filePath.includes('/bin/')) {\n69:     return 'scripts';\n70:   }\n71: \n72:   return 'core';\n73: };\n74: \n75: const extractRule = category => {\n76:   if (typeof category !== 'string') {\n77:     return { domain: 'unknown', rule: 'unknown', category: 'unknown' };\n78:   }\n79: \n80:   const normalizedCategory = category.trim();\n81:   const parts = normalizedCategory.split('/');\n82: \n83:   if (parts.length >= CATEGORY_SEGMENTS_MIN) {\n84:     return {\n85:       category: normalizedCategory,\n86:       domain: parts[1] ?? 'unknown',\n87:       rule: parts[2] ?? 'unknown',\n88:     };\n89:   }\n90: \n91:   return {\n92:     category: normalizedCategory,\n93:     domain: parts[0] ?? 'unknown',\n94:     rule: parts[1] ?? parts[0] ?? 'unknown',\n95:   };\n96: };\n97: \n98: const extractPath = location => {\n99:   const locationPath = location?.path;\n100: \n101:   if (typeof locationPath === 'string') {\n102:     return normalize(locationPath);\n103:   }\n104: \n105:   if (typeof locationPath?.file === 'string') {\n106:     return normalize(locationPath.file);\n107:   }\n108: \n109:   if (typeof location?.resource === 'string') {\n110:     return normalize(location.resource);\n111:   }\n112: \n113:   return 'unknown';\n114: };\n115: \n116: const extractLineAndColumn = location => {\n117:   if (location?.start && typeof location.start.line === 'number') {\n118:     return {\n119:       line: location.start.line,\n120:       column: location.start.column ?? 1,\n121:     };\n122:   }\n123: \n124:   const span = location?.span;\n125: \n126:   if (span?.start && typeof span.start.line === 'number') {\n127:     return {\n128:       line: span.start.line,\n129:       column: span.start.column ?? 1,\n130:     };\n131:   }\n132: \n133:   if (Array.isArray(span) && typeof span[0]?.line === 'number') {\n134:     return {\n135:       line: span[0].line,\n136:       column: span[0].column ?? 1,\n137:     };\n138:   }\n139: \n140:   return { line: 1, column: 1 };\n141: };\n142: \n143: const normalizeMessage = value => {\n144:   if (typeof value !== 'string') {\n145:     return '';\n146:   }\n147: \n148:   return value.replace(/\\s+/g, ' ').trim();\n149: };\n150: \n151: const isFixableDiagnostic = diagnostic => {\n152:   const tags = Array.isArray(diagnostic?.tags)\n153:     ? diagnostic.tags.map(tag => String(tag).toLowerCase())\n154:     : [];\n155: \n156:   if (tags.some(tag => tag.includes('fix'))) {\n157:     return true;\n158:   }\n159: \n160:   if (Array.isArray(diagnostic?.suggestedFixes)) {\n161:     return diagnostic.suggestedFixes.length > 0;\n162:   }\n163: \n164:   if (Array.isArray(diagnostic?.fixes)) {\n165:     return diagnostic.fixes.length > 0;\n166:   }\n167: \n168:   if (diagnostic?.fix) {\n169:     return true;\n170:   }\n171: \n172:   if (Array.isArray(diagnostic?.advices)) {\n173:     return diagnostic.advices.some(advice => advice?.category === 'action');\n174:   }\n175: \n176:   return false;\n177: };\n178: \n179: const createFingerprint = input => {\n180:   return createHash('sha256')\n181:     .update(input)\n182:     .digest('hex')\n183:     .slice(0, FINGERPRINT_LENGTH);\n184: };\n185: \n186: const createNormalizedDiagnostic = diagnostic => {\n187:   const location = diagnostic?.location ?? {};\n188:   const filePath = extractPath(location);\n189:   const { domain, rule, category } = extractRule(diagnostic?.category);\n190:   const { line, column } = extractLineAndColumn(location);\n191:   const message = normalizeMessage(\n192:     diagnostic?.description ?? diagnostic?.message,\n193:   );\n194:   const severity = String(diagnostic?.severity ?? 'unknown').toLowerCase();\n195:   const fixable = isFixableDiagnostic(diagnostic);\n196:   const pathFamily = classifyPathFamily(filePath);\n197: \n198:   const fingerprint = createFingerprint(\n199:     `${category}|${filePath}|${line}|${column}|${message}`,\n200:   );\n201: \n202:   return {\n203:     category,\n204:     column,\n205:     domain,\n206:     filePath,\n207:     fingerprint,\n208:     fixable,\n209:     line,\n210:     message,\n211:     pathFamily,\n212:     rule,\n213:     severity,\n214:   };\n215: };\n216: \n217: const ensureOutputDirectory = async outputPath => {\n218:   await mkdir(dirname(outputPath), { recursive: true });\n219: };\n220: \n221: const createSortedDiagnostics = parsed => {\n222:   const rawDiagnostics = Array.isArray(parsed?.diagnostics)\n223:     ? parsed.diagnostics\n224:     : [];\n225: \n226:   return rawDiagnostics.map(createNormalizedDiagnostic).sort((left, right) => {\n227:     if (left.filePath !== right.filePath) {\n228:       return left.filePath.localeCompare(right.filePath);\n229:     }\n230: \n231:     if (left.line !== right.line) {\n232:       return left.line - right.line;\n233:     }\n234: \n235:     if (left.column !== right.column) {\n236:       return left.column - right.column;\n237:     }\n238: \n239:     if (left.rule !== right.rule) {\n240:       return left.rule.localeCompare(right.rule);\n241:     }\n242: \n243:     return left.fingerprint.localeCompare(right.fingerprint);\n244:   });\n245: };\n246: \n247: const createRunMetadata = args => {\n248:   return {\n249:     baseSha: args['base-sha'] ?? '',\n250:     biomeVersion: args['biome-version'] ?? '',\n251:     prNumber: args.pr ?? '',\n252:     repo: args.repo ?? 'unknown',\n253:     runId: args['run-id'] ?? '',\n254:     sha: args.sha ?? '',\n255:     sharedConfigVersion: args['shared-config-version'] ?? '',\n256:     localConfigHash: args['local-config-hash'] ?? '',\n257:     driftOwnerNote: args['drift-owner-note'] ?? '',\n258:     timestamp: args.timestamp ?? new Date().toISOString(),\n259:   };\n260: };\n261: \n262: const createSummary = (parsed, diagnostics) => {\n263:   return {\n264:     diagnostics: diagnostics.length,\n265:     errors: Number(parsed?.summary?.errors ?? 0),\n266:     fixable: diagnostics.filter(diagnostic => diagnostic.fixable).length,\n267:     infos: Number(parsed?.summary?.infos ?? 0),\n268:     warnings: Number(parsed?.summary?.warnings ?? 0),\n269:   };\n270: };\n271: \n272: const main = async () => {\n273:   const args = parseArguments(process.argv.slice(2));\n274:   const inputPath = args.input;\n275:   const outputPath = args.output;\n276: \n277:   if (!(inputPath && outputPath)) {\n278:     throw new Error(\n279:       'Usage: node normalize.mjs --input <biome.json> --output <normalized.json> [--repo <name>] [--sha <sha>] [--pr <number>]',\n280:     );\n281:   }\n282: \n283:   const rawContent = await readFile(inputPath, 'utf8');\n284:   const parsed = JSON.parse(rawContent);\n285:   const diagnostics = createSortedDiagnostics(parsed);\n286: \n287:   const normalized = {\n288:     generatedAt: new Date().toISOString(),\n289:     run: createRunMetadata(args),\n290:     schemaVersion: SCHEMA_VERSION,\n291:     summary: createSummary(parsed, diagnostics),\n292:     diagnostics,\n293:   };\n294: \n295:   await ensureOutputDirectory(outputPath);\n296:   await writeFile(outputPath, `${JSON.stringify(normalized, null, 2)}\\n`);\n297: };\n298: \n299: await main();\n\n(End of file - total 299 lines)\n</content>",
+            "metadata": {
+              "preview": "import { createHash } from 'node:crypto';\nimport { mkdir, readFile, writeFile } from 'node:fs/promises';\nimport { dirname, normalize } from 'node:path';\n\nconst SCHEMA_VERSION = 1;\nconst CATEGORY_SEGMENTS_MIN = 3;\nconst FINGERPRINT_LENGTH = 16;\n\nconst parseArguments = argv => {\n  const args = {};\n\n  for (let index = 0; index < argv.length; index += 1) {\n    const token = argv[index];\n\n    if (!token.startsWith('--')) {\n      continue;\n    }\n\n    const key = token.slice(2);\n    const value = argv[index + 1];",
+              "truncated": false,
+              "loaded": []
+            },
+            "title": "scripts/biome-insights/normalize.mjs",
+            "time": {
+              "start": 1775499874418,
+              "end": 1775499874436
+            }
+          },
+          "id": "prt_d640a0d3c001QMCDPpJEB55h6j",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d640a011c002z9eb3vlZgQmM8V"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "read:5",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/Users/pnodet/git/nivalis/biome-config/scripts/biome-insights/upsert-pr-comment.cjs"
+            },
+            "output": "<path>/Users/pnodet/git/nivalis/biome-config/scripts/biome-insights/upsert-pr-comment.cjs</path>\n<type>file</type>\n<content>1: const fs = require('node:fs');\n2: const path = require('node:path');\n3: \n4: const MARKER = '<!-- nivalis-biome-insights:changed-files-errors:v1 -->';\n5: const MAX_ROWS = 50;\n6: const MESSAGE_MAX_LENGTH = 160;\n7: const LEADING_DOT_SLASH_PATTERN = /^\\.\\//;\n8: const LEADING_SLASH_PATTERN = /^\\//;\n9: \n10: const normalizePath = value => {\n11:   return String(value ?? '')\n12:     .replaceAll('\\\\', '/')\n13:     .replace(LEADING_DOT_SLASH_PATTERN, '')\n14:     .replace(LEADING_SLASH_PATTERN, '');\n15: };\n16: \n17: const sortDiagnostics = (left, right) => {\n18:   const leftPath = normalizePath(left.filePath);\n19:   const rightPath = normalizePath(right.filePath);\n20: \n21:   if (leftPath !== rightPath) {\n22:     return leftPath.localeCompare(rightPath);\n23:   }\n24: \n25:   const leftLine = Number(left.line ?? 0);\n26:   const rightLine = Number(right.line ?? 0);\n27: \n28:   if (leftLine !== rightLine) {\n29:     return leftLine - rightLine;\n30:   }\n31: \n32:   const leftRule = `${left.domain}/${left.rule}`;\n33:   const rightRule = `${right.domain}/${right.rule}`;\n34: \n35:   if (leftRule !== rightRule) {\n36:     return leftRule.localeCompare(rightRule);\n37:   }\n38: \n39:   return String(left.fingerprint ?? '').localeCompare(\n40:     String(right.fingerprint ?? ''),\n41:   );\n42: };\n43: \n44: const formatRule = diagnostic => {\n45:   return `${diagnostic.domain}/${diagnostic.rule}`;\n46: };\n47: \n48: const formatMessage = diagnostic => {\n49:   return String(diagnostic.message ?? '')\n50:     .replace(/\\s+/g, ' ')\n51:     .trim();\n52: };\n53: \n54: const buildCommentBody = touchedErrors => {\n55:   const filesWithErrors = new Set(\n56:     touchedErrors.map(diagnostic => normalizePath(diagnostic.filePath)),\n57:   );\n58: \n59:   const displayRows = touchedErrors.slice(0, MAX_ROWS);\n60:   const hiddenCount = touchedErrors.length - displayRows.length;\n61:   const lines = [\n62:     MARKER,\n63:     '## Biome summary (changed files)',\n64:     '',\n65:     `- Errors on changed files: **${touchedErrors.length}**`,\n66:     `- Changed files with errors: **${filesWithErrors.size}**`,\n67:     '',\n68:   ];\n69: \n70:   if (touchedErrors.length === 0) {\n71:     lines.push('No Biome errors found on touched files in this PR.');\n72:   } else {\n73:     lines.push('| File | Line | Rule | Message |');\n74:     lines.push('| --- | --- | --- | --- |');\n75: \n76:     for (const diagnostic of displayRows) {\n77:       const filePath = normalizePath(diagnostic.filePath);\n78:       const line = Number(diagnostic.line ?? 1);\n79:       const rule = formatRule(diagnostic);\n80:       const message = formatMessage(diagnostic)\n81:         .replaceAll('|', '\\\\|')\n82:         .slice(0, MESSAGE_MAX_LENGTH);\n83: \n84:       lines.push(`| \\`${filePath}\\` | ${line} | \\`${rule}\\` | ${message} |`);\n85:     }\n86: \n87:     if (hiddenCount > 0) {\n88:       lines.push('');\n89:       lines.push(\n90:         `Showing first ${MAX_ROWS} findings. ${hiddenCount} additional findings are omitted.`,\n91:       );\n92:     }\n93:   }\n94: \n95:   lines.push('');\n96:   lines.push('_This comment is updated on each workflow run._');\n97: \n98:   return lines.join('\\n');\n99: };\n100: \n101: const getDiagnostics = (core, artifactPath) => {\n102:   const resolvedPath = path.resolve(artifactPath);\n103: \n104:   if (!fs.existsSync(resolvedPath)) {\n105:     core.warning(`No normalized artifact found at ${resolvedPath}.`);\n106:     return [];\n107:   }\n108: \n109:   const parsed = JSON.parse(fs.readFileSync(resolvedPath, 'utf8'));\n110:   return Array.isArray(parsed?.diagnostics) ? parsed.diagnostics : [];\n111: };\n112: \n113: const getTouchedPaths = async (github, context, pullNumber) => {\n114:   const changedFiles = await github.paginate(github.rest.pulls.listFiles, {\n115:     owner: context.repo.owner,\n116:     repo: context.repo.repo,\n117:     pull_number: pullNumber,\n118:     per_page: 100,\n119:   });\n120: \n121:   const touchedPaths = new Set();\n122: \n123:   for (const file of changedFiles) {\n124:     if (file.status !== 'removed') {\n125:       touchedPaths.add(normalizePath(file.filename));\n126:     }\n127: \n128:     if (file.status === 'renamed' && file.previous_filename) {\n129:       touchedPaths.add(normalizePath(file.previous_filename));\n130:     }\n131:   }\n132: \n133:   return touchedPaths;\n134: };\n135: \n136: const upsertComment = async (github, context, pullNumber, body) => {\n137:   const comments = await github.paginate(github.rest.issues.listComments, {\n138:     owner: context.repo.owner,\n139:     repo: context.repo.repo,\n140:     issue_number: pullNumber,\n141:     per_page: 100,\n142:   });\n143: \n144:   const existingComment = comments.find(comment => {\n145:     return comment.body?.includes(MARKER);\n146:   });\n147: \n148:   if (!existingComment) {\n149:     await github.rest.issues.createComment({\n150:       owner: context.repo.owner,\n151:       repo: context.repo.repo,\n152:       issue_number: pullNumber,\n153:       body,\n154:     });\n155: \n156:     return { created: true };\n157:   }\n158: \n159:   await github.rest.issues.updateComment({\n160:     owner: context.repo.owner,\n161:     repo: context.repo.repo,\n162:     comment_id: existingComment.id,\n163:     body,\n164:   });\n165: \n166:   return { commentId: existingComment.id, created: false };\n167: };\n168: \n169: const upsertBiomeChangedFilesComment = async ({\n170:   artifactPath = '.biome-insights/biome-normalized.json',\n171:   context,\n172:   core,\n173:   github,\n174: }) => {\n175:   const diagnostics = getDiagnostics(core, artifactPath);\n176:   const pullNumber = context.payload.pull_request?.number;\n177: \n178:   if (!pullNumber) {\n179:     core.info('No pull request context found. Skipping comment.');\n180:     return;\n181:   }\n182: \n183:   const touchedPaths = await getTouchedPaths(github, context, pullNumber);\n184:   const touchedErrors = diagnostics\n185:     .filter(diagnostic => {\n186:       return (\n187:         String(diagnostic?.severity).toLowerCase() === 'error' &&\n188:         touchedPaths.has(normalizePath(diagnostic?.filePath))\n189:       );\n190:     })\n191:     .sort(sortDiagnostics);\n192: \n193:   const body = buildCommentBody(touchedErrors);\n194:   const result = await upsertComment(github, context, pullNumber, body);\n195: \n196:   if (result.created) {\n197:     core.info('Created PR comment.');\n198:     return;\n199:   }\n200: \n201:   core.info(`Updated PR comment ${result.commentId}.`);\n202: };\n203: \n204: module.exports = {\n205:   upsertBiomeChangedFilesComment,\n206: };\n\n(End of file - total 206 lines)\n</content>",
+            "metadata": {
+              "preview": "const fs = require('node:fs');\nconst path = require('node:path');\n\nconst MARKER = '<!-- nivalis-biome-insights:changed-files-errors:v1 -->';\nconst MAX_ROWS = 50;\nconst MESSAGE_MAX_LENGTH = 160;\nconst LEADING_DOT_SLASH_PATTERN = /^\\.\\//;\nconst LEADING_SLASH_PATTERN = /^\\//;\n\nconst normalizePath = value => {\n  return String(value ?? '')\n    .replaceAll('\\\\', '/')\n    .replace(LEADING_DOT_SLASH_PATTERN, '')\n    .replace(LEADING_SLASH_PATTERN, '');\n};\n\nconst sortDiagnostics = (left, right) => {\n  const leftPath = normalizePath(left.filePath);\n  const rightPath = normalizePath(right.filePath);\n",
+              "truncated": false,
+              "loaded": []
+            },
+            "title": "scripts/biome-insights/upsert-pr-comment.cjs",
+            "time": {
+              "start": 1775499874498,
+              "end": 1775499874502
+            }
+          },
+          "id": "prt_d640a1075001TErdIowMT3qDKR",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d640a011c002z9eb3vlZgQmM8V"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "327a83a44db68bd0d1601ab4b4be4378ac78b21a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 23437,
+            "input": 1571,
+            "output": 106,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 21760
+            }
+          },
+          "cost": 0.0034366,
+          "id": "prt_d640a10c6002MaOupBeymGafF5",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d640a011c002z9eb3vlZgQmM8V"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_d6409d7200015XcUoofPH9ovub",
+        "role": "assistant",
+        "mode": "plan",
+        "agent": "plan",
+        "path": {
+          "cwd": "/Users/pnodet/git/nivalis/biome-config",
+          "root": "/Users/pnodet/git/nivalis/biome-config"
+        },
+        "cost": 0.0067456,
+        "tokens": {
+          "total": 28372,
+          "input": 4505,
+          "output": 571,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 23296
+          }
+        },
+        "modelID": "kimi-k2.5",
+        "providerID": "moonshotai",
+        "time": {
+          "created": 1775499874566,
+          "completed": 1775499891460
+        },
+        "finish": "stop",
+        "id": "msg_d640a1106002efrqdMggFzpxUt",
+        "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn"
+      },
+      "parts": [
+        {
+          "snapshot": "327a83a44db68bd0d1601ab4b4be4378ac78b21a",
+          "type": "step-start",
+          "id": "prt_d640a1b18001uPRuPmk0hSYZ2n",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d640a1106002efrqdMggFzpxUt"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have a complete picture of how the GitHub Actions work. Let me summarize them for the user.",
+          "time": {
+            "start": 1775499877145,
+            "end": 1775499877637
+          },
+          "id": "prt_d640a1b19001tLRVStr3h0M7jy",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d640a1106002efrqdMggFzpxUt"
+        },
+        {
+          "type": "text",
+          "text": "This repository has **two GitHub Actions workflows**:\n\n## 1. `publish.yaml` — Publish Package\n\nTriggered on **version tags** (`v*`), this workflow publishes the package to npm:\n\n| Step | Description |\n|------|-------------|\n| Checkout | Gets the code |\n| Setup Node.js 22 | Prepares the environment |\n| Setup pnpm | For dependency management |\n| Install dependencies | `pnpm install --frozen-lockfile` |\n| Update npm | Ensures npm 11.5.1+ for trusted publishing |\n| Publish | Runs `npm publish` |\n\nUses **OIDC token authentication** (`id-token: write`) for secure npm publishing without stored credentials.\n\n---\n\n## 2. `biome-insights-artifact.yaml` — Biome Insights Artifact\n\nThis is a **reusable workflow** (`workflow_call`) that other repositories can call to run Biome linting and generate insights. Here's the flow:\n\n### Inputs\n- `config-repository` — Where the normalizer scripts live (default: `nivalis-studio/biome-config`)\n- `config-ref` — Git ref for the config repo\n- `shared-config-version` — For tracking which config version is used\n- `local-config-hash` — For drift detection\n\n### What it does\n\n1. **Setup**: Checks out the caller repo, sets up Node.js, Biome, and pnpm\n2. **Run Biome**: Executes `biome ci --reporter=json`, continues on error to process results\n3. **Checkout scripts**: Pulls the normalization scripts from the config repository\n4. **Normalize**: Runs `normalize.mjs` which:\n   - Parses Biome's JSON output\n   - Classifies files into families (`generated`, `test`, `docs`, `config`, `scripts`, `core`)\n   - Extracts rule domains and creates fingerprints\n   - Sorts diagnostics by file/line/column\n   - Outputs a structured artifact with metadata (repo, SHA, PR number, Biome version, etc.)\n5. **Upload artifact**: Stores the normalized results\n6. **PR comment**: Uses `upsert-pr-comment.cjs` to post/update a summary comment on the PR showing errors only on **changed files**\n7. **Fail if needed**: Finally exits with error if Biome found issues\n\n### The PR Comment\nShows a markdown table with errors on touched files only (max 50 rows), making it easy for reviewers to see relevant issues without noise from unrelated files.\n\n---\n\n**Summary**: The publish workflow handles releases, while the Biome Insights workflow provides reusable CI linting with normalized artifacts and PR feedback for the Nivalis ecosystem.",
+          "time": {
+            "start": 1775499891412,
+            "end": 1775499891412
+          },
+          "id": "prt_d640a1d07001hPcmTt9I1tbiPJ",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d640a1106002efrqdMggFzpxUt"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "327a83a44db68bd0d1601ab4b4be4378ac78b21a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 28372,
+            "input": 4505,
+            "output": 571,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 23296
+            }
+          },
+          "cost": 0.0067456,
+          "id": "prt_d640a52d70010XLX8uIyrqzSVm",
+          "sessionID": "ses_29bf628e8ffelXBwsq5WbmcROn",
+          "messageID": "msg_d640a1106002efrqdMggFzpxUt"
+        }
+      ]
+    }
+  ]
+}
