@@ -1,0 +1,33 @@
+Upload artifact should use v7 not v4
+
+
+v7 What's new
+
+Direct Uploads
+
+Adds support for uploading single files directly (unzipped). Callers can set the new archive parameter to false to skip zipping the file during upload. Right now, we only support single files. The action will fail if the glob passed resolves to multiple files. The name parameter is also ignored with this setting. Instead, the name of the artifact will be the name of the uploaded file.
+
+ESM
+
+To support new versions of the @actions/* packages, we've upgraded the package to ESM.
+
+What's Changed
+
+Add proxy integration test by @Link- in #754
+Upgrade the module to ESM and bump dependencies by @danwkennedy in #762
+Support direct file uploads by @danwkennedy in #764
+New Contributors
+
+@Link- made their first contribution in #754
+Full Changelog: v6...v7.0.0 
+
+v6 - What's new
+
+Important
+
+actions/upload-artifact@v6 now runs on Node.js 24 (runs.using: node24) and requires a minimum Actions Runner version of 2.327.1. If you are using self-hosted runners, ensure they are updated before upgrading.
+Node.js 24
+
+This release updates the runtime to Node.js 24. v5 had preliminary support for Node.js 24, however this action was by default still running on Node.js 20. Now this action by default will run on Node.js 24. 
+
+and pnpm action setup should use v5
