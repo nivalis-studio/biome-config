@@ -45,7 +45,7 @@ jobs:
         uses: biomejs/setup-biome@v2
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -86,7 +86,7 @@ jobs:
             --local-config-hash "$LOCAL_CONFIG_HASH"
 
       - name: Upload normalized artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: biome-insights-${{ github.repository_id }}-${{ github.run_id }}
           path: ${{ github.workspace }}/.biome-insights/
