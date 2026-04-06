@@ -106,17 +106,7 @@ const getDiagnostics = (core, artifactPath) => {
     return [];
   }
 
-  let parsed;
-
-  try {
-    parsed = JSON.parse(fs.readFileSync(resolvedPath, 'utf8'));
-  } catch (error) {
-    core.warning(
-      `Failed to parse artifact at ${resolvedPath}: ${error instanceof Error ? error.message : String(error)}`,
-    );
-    return [];
-  }
-
+  const parsed = JSON.parse(fs.readFileSync(resolvedPath, 'utf8'));
   return Array.isArray(parsed?.diagnostics) ? parsed.diagnostics : [];
 };
 

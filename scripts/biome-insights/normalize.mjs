@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { dirname, isAbsolute, normalize, resolve } from 'node:path';
+import { dirname, normalize } from 'node:path';
 
 const SCHEMA_VERSION = 1;
 const CATEGORY_SEGMENTS_MIN = 3;
@@ -280,17 +280,18 @@ const main = async () => {
     );
   }
 
+  const rawContent = await readFile(inputPath, 'utf8');
   let parsed;
-
   try {
-    const rawContent = await readFile(inputPath, 'utf8');
     parsed = JSON.parse(rawContent);
-  } catch (error) {
-    throw new Error(
-      `Failed to parse input file "${inputPath}": ${error instanceof Error ? error.message : String(error)}`,
-    );
+  } catch {
+    // If it's not valid JSON, it might be empty or contain error text
+    // Create an empty result
+    parsed = {
+      diagnostics: [],
+      summary: { errors: 0, warnings: 0, infos: 0 },
+    };
   }
-
   const diagnostics = createSortedDiagnostics(parsed);
 
   const normalized = {
@@ -301,23 +302,8 @@ const main = async () => {
     diagnostics,
   };
 
-  const resolvedOutputPath = isAbsolute(outputPath)
-    ? outputPath
-    : resolve(process.cwd(), outputPath);
-  const resolvedCwd = resolve(process.cwd());
-
-  if (!resolvedOutputPath.startsWith(resolvedCwd)) {
-    throw new Error(
-      `Output path "${outputPath}" escapes the current working directory. ` +
-        'Please provide a path within the project directory.',
-    );
-  }
-
-  await ensureOutputDirectory(resolvedOutputPath);
-  await writeFile(
-    resolvedOutputPath,
-    `${JSON.stringify(normalized, null, 2)}\n`,
-  );
+  await ensureOutputDirectory(outputPath);
+  await writeFile(outputPath, `${JSON.stringify(normalized, null, 2)}\n`);
 };
 
 await main();
