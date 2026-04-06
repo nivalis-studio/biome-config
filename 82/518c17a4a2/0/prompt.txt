@@ -1,0 +1,13 @@
+Great it works, should we do some cleanup now?
+
+---
+
+Can we cleanup normalize?
+
+---
+
+Ok
+
+---
+
+Let's remove ai slop and cleanup biome linter errors
