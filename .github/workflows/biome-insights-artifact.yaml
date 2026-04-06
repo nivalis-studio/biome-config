@@ -1,4 +1,6 @@
 name: Biome Insights Artifact
+# Reusable workflow that runs Biome, normalizes diagnostics, uploads artifacts,
+# and posts PR comments with errors on changed files.
 
 on:
   workflow_call:
@@ -62,9 +64,11 @@ jobs:
           ref: ${{ inputs.config-ref }}
           path: .nivalis-biome-config
 
+      - name: Create output directory
+        run: mkdir -p .biome-insights
+
       - name: Normalize diagnostics artifact
         id: normalize
-        continue-on-error: true
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
           LOCAL_CONFIG_HASH: ${{ inputs.local-config-hash }}

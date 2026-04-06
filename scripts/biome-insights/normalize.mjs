@@ -3,7 +3,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, normalize } from 'node:path';
 
 const SCHEMA_VERSION = 1;
-const CATEGORY_SEGMENTS_MIN = 3;
+const MIN_CATEGORY_PARTS = 3;
 const FINGERPRINT_LENGTH = 16;
 
 const parseArguments = argv => {
@@ -21,11 +21,10 @@ const parseArguments = argv => {
 
     if (!value || value.startsWith('--')) {
       args[key] = 'true';
-      continue;
+    } else {
+      args[key] = value;
+      index += 1;
     }
-
-    args[key] = value;
-    index += 1;
   }
 
   return args;
@@ -80,7 +79,7 @@ const extractRule = category => {
   const normalizedCategory = category.trim();
   const parts = normalizedCategory.split('/');
 
-  if (parts.length >= CATEGORY_SEGMENTS_MIN) {
+  if (parts.length >= MIN_CATEGORY_PARTS) {
     return {
       category: normalizedCategory,
       domain: parts[1] ?? 'unknown',
@@ -183,7 +182,7 @@ const createFingerprint = input => {
     .slice(0, FINGERPRINT_LENGTH);
 };
 
-const createNormalizedDiagnostic = diagnostic => {
+const normalizeDiagnostic = diagnostic => {
   const location = diagnostic?.location ?? {};
   const filePath = extractPath(location);
   const { domain, rule, category } = extractRule(diagnostic?.category);
@@ -194,7 +193,6 @@ const createNormalizedDiagnostic = diagnostic => {
   const severity = String(diagnostic?.severity ?? 'unknown').toLowerCase();
   const fixable = isFixableDiagnostic(diagnostic);
   const pathFamily = classifyPathFamily(filePath);
-
   const fingerprint = createFingerprint(
     `${category}|${filePath}|${line}|${column}|${message}`,
   );
@@ -214,59 +212,70 @@ const createNormalizedDiagnostic = diagnostic => {
   };
 };
 
-const ensureOutputDirectory = async outputPath => {
-  await mkdir(dirname(outputPath), { recursive: true });
+const sortDiagnostics = (left, right) => {
+  const pathCompare = left.filePath.localeCompare(right.filePath);
+  if (pathCompare !== 0) {
+    return pathCompare;
+  }
+
+  const lineCompare = left.line - right.line;
+  if (lineCompare !== 0) {
+    return lineCompare;
+  }
+
+  const colCompare = left.column - right.column;
+  if (colCompare !== 0) {
+    return colCompare;
+  }
+
+  const ruleCompare = left.rule.localeCompare(right.rule);
+  if (ruleCompare !== 0) {
+    return ruleCompare;
+  }
+
+  return left.fingerprint.localeCompare(right.fingerprint);
 };
 
-const createSortedDiagnostics = parsed => {
+const processDiagnostics = parsed => {
   const rawDiagnostics = Array.isArray(parsed?.diagnostics)
     ? parsed.diagnostics
     : [];
-
-  return rawDiagnostics.map(createNormalizedDiagnostic).sort((left, right) => {
-    if (left.filePath !== right.filePath) {
-      return left.filePath.localeCompare(right.filePath);
-    }
-
-    if (left.line !== right.line) {
-      return left.line - right.line;
-    }
-
-    if (left.column !== right.column) {
-      return left.column - right.column;
-    }
-
-    if (left.rule !== right.rule) {
-      return left.rule.localeCompare(right.rule);
-    }
-
-    return left.fingerprint.localeCompare(right.fingerprint);
-  });
+  return rawDiagnostics.map(normalizeDiagnostic).sort(sortDiagnostics);
 };
 
-const createRunMetadata = args => {
-  return {
-    baseSha: args['base-sha'] ?? '',
-    biomeVersion: args['biome-version'] ?? '',
-    prNumber: args.pr ?? '',
-    repo: args.repo ?? 'unknown',
-    runId: args['run-id'] ?? '',
-    sha: args.sha ?? '',
-    sharedConfigVersion: args['shared-config-version'] ?? '',
-    localConfigHash: args['local-config-hash'] ?? '',
-    driftOwnerNote: args['drift-owner-note'] ?? '',
-    timestamp: args.timestamp ?? new Date().toISOString(),
-  };
-};
+const createRunMetadata = args => ({
+  baseSha: args['base-sha'] ?? '',
+  biomeVersion: args['biome-version'] ?? '',
+  prNumber: args.pr ?? '',
+  repo: args.repo ?? 'unknown',
+  runId: args['run-id'] ?? '',
+  sha: args.sha ?? '',
+  sharedConfigVersion: args['shared-config-version'] ?? '',
+  localConfigHash: args['local-config-hash'] ?? '',
+  timestamp: args.timestamp ?? new Date().toISOString(),
+});
 
-const createSummary = (parsed, diagnostics) => {
-  return {
-    diagnostics: diagnostics.length,
-    errors: Number(parsed?.summary?.errors ?? 0),
-    fixable: diagnostics.filter(diagnostic => diagnostic.fixable).length,
-    infos: Number(parsed?.summary?.infos ?? 0),
-    warnings: Number(parsed?.summary?.warnings ?? 0),
-  };
+const createSummary = (parsed, diagnostics) => ({
+  diagnostics: diagnostics.length,
+  errors: Number(parsed?.summary?.errors ?? 0),
+  fixable: diagnostics.filter(d => d.fixable).length,
+  infos: Number(parsed?.summary?.infos ?? 0),
+  warnings: Number(parsed?.summary?.warnings ?? 0),
+});
+
+const loadBiomeOutput = async inputPath => {
+  let rawContent;
+  try {
+    rawContent = await readFile(inputPath, 'utf8');
+  } catch {
+    return { diagnostics: [], summary: { errors: 0, warnings: 0, infos: 0 } };
+  }
+
+  try {
+    return JSON.parse(rawContent);
+  } catch {
+    return { diagnostics: [], summary: { errors: 0, warnings: 0, infos: 0 } };
+  }
 };
 
 const main = async () => {
@@ -276,30 +285,12 @@ const main = async () => {
 
   if (!(inputPath && outputPath)) {
     throw new Error(
-      'Usage: node normalize.mjs --input <biome.json> --output <normalized.json> [--repo <name>] [--sha <sha>] [--pr <number>]',
+      'Usage: node normalize.mjs --input <biome.json> --output <normalized.json>',
     );
   }
 
-  let rawContent;
-  try {
-    rawContent = await readFile(inputPath, 'utf8');
-  } catch {
-    // File doesn't exist or can't be read, create empty result
-    rawContent = '{}';
-  }
-
-  let parsed;
-  try {
-    parsed = JSON.parse(rawContent);
-  } catch {
-    // If it's not valid JSON, it might be empty or contain error text
-    // Create an empty result
-    parsed = {
-      diagnostics: [],
-      summary: { errors: 0, warnings: 0, infos: 0 },
-    };
-  }
-  const diagnostics = createSortedDiagnostics(parsed);
+  const parsed = await loadBiomeOutput(inputPath);
+  const diagnostics = processDiagnostics(parsed);
 
   const normalized = {
     generatedAt: new Date().toISOString(),
@@ -309,7 +300,7 @@ const main = async () => {
     diagnostics,
   };
 
-  await ensureOutputDirectory(outputPath);
+  await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, `${JSON.stringify(normalized, null, 2)}\n`);
 };
 
