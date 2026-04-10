@@ -21,8 +21,15 @@
 		"insights:normalize": "node ./scripts/biome-insights/normalize.mjs",
 		"insights:summary": "node ./scripts/biome-insights/summarize.mjs"
 	},
-	"files": ["biome.json"],
-	"keywords": ["biome", "linter", "formatter", "fixer"],
+	"files": [
+		"biome.json"
+	],
+	"keywords": [
+		"biome",
+		"linter",
+		"formatter",
+		"fixer"
+	],
 	"packageManager": "pnpm@10.33.0",
 	"peerDependencies": {
 		"@biomejs/biome": ">=2"
