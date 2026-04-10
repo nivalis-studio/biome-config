@@ -1,0 +1,37 @@
+I have a pnpm run lint error, can we fix it in the config?
+
+---
+
+> @nivalis/biome-config@2.4.10 lint /Users/pnodet/git/nivalis/biome-config
+> biome check
+
+package.json format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✖ Formatter would have printed the following content:
+
+    22 22 │       "insights:summary": "node ./scripts/biome-insights/summarize.mjs"
+    23 23 │     },
+    24    │ - → "files":·[
+    25    │ - → → "biome.json"
+    26    │ - → ],
+    27    │ - → "keywords":·[
+    28    │ - → → "biome",
+    29    │ - → → "linter",
+    30    │ - → → "formatter",
+    31    │ - → → "fixer"
+    32    │ - → ],
+       24 │ + → "files":·["biome.json"],
+       25 │ + → "keywords":·["biome",·"linter",·"formatter",·"fixer"],
+    33 26 │     "packageManager": "pnpm@10.33.0",
+    34 27 │     "peerDependencies": {
+
+
+Checked 10 files in 53ms. No fixes applied.
+Found 1 error.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✖ Some errors were emitted while running checks.
+
+---
+
+Enfore multiline for package.json

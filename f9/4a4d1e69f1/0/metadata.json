@@ -1,0 +1,40 @@
+{
+  "cli_version": "0.5.3",
+  "checkpoint_id": "f94a4d1e69f1",
+  "session_id": "ses_288a619a2ffe7ERuoRX8IhBLBz",
+  "strategy": "manual-commit",
+  "created_at": "2026-04-10T12:27:38.106138Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "biome.json",
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml"
+  ],
+  "agent": "OpenCode",
+  "model": "gpt-5.3-codex",
+  "turn_id": "46699c88820c",
+  "token_usage": {
+    "input_tokens": 49516,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 300800,
+    "output_tokens": 1058,
+    "api_call_count": 10
+  },
+  "session_metrics": {
+    "turn_count": 2
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-04-10T12:27:38.052464Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 3,
+    "human_modified": 54,
+    "human_removed": 0,
+    "total_committed": 15,
+    "total_lines_changed": 58,
+    "agent_percentage": 0,
+    "metric_version": 2
+  }
+}
