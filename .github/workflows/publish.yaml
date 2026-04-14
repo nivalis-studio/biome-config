@@ -25,8 +25,5 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       # Ensure npm 11.5.1 or later is installed
-      - name: Ensure npm supports trusted publishing
-        run: npm install -g npm@latest
-
       - name: Publish to npm
-        run: npm publish
+        run: npx npm@latest publish
