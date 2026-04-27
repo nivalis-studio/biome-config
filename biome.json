@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.4.12/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
 	"assist": {
 		"enabled": true,
 		"actions": {
@@ -459,7 +459,6 @@
 				"noUnknownTypeSelector": "error",
 				"noUnknownUnit": "error",
 				"noUnmatchableAnbSelector": "error",
-
 				"noNextAsyncClientComponent": "error",
 				"noVueDataObjectDeclaration": "error",
 				"noVueReservedKeys": "error",
@@ -468,6 +467,16 @@
 			},
 			"nursery": {
 				"recommended": true,
+				"useRegexpTest": "error",
+				"noLoopFunc": "error",
+				"useDomQuerySelector": "error",
+				"noReactNativeDeepImports": "error",
+				"noReactNativeLiteralColors": "error",
+				"noReactNativeRawText": "error",
+				"useReactNativePlatformComponents": "error",
+				"noJsxLeakedDollar": "error",
+				"useDomNodeTextContent": "error",
+				"noUnnecessaryTemplateExpression": "error",
 				"noMisusedPromises": "error",
 				"noShadow": "error",
 				"noUnnecessaryConditions": "info",
