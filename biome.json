@@ -467,13 +467,15 @@
 			},
 			"nursery": {
 				"recommended": true,
+
+				"noReactNativeDeepImports": "off",
+				"noReactNativeLiteralColors": "off",
+				"noReactNativeRawText": "off",
+				"useReactNativePlatformComponents": "off",
+
 				"useRegexpTest": "error",
 				"noLoopFunc": "error",
 				"useDomQuerySelector": "error",
-				"noReactNativeDeepImports": "error",
-				"noReactNativeLiteralColors": "error",
-				"noReactNativeRawText": "error",
-				"useReactNativePlatformComponents": "error",
 				"noJsxLeakedDollar": "error",
 				"useDomNodeTextContent": "error",
 				"noUnnecessaryTemplateExpression": "error",
