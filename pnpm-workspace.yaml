@@ -2,12 +2,12 @@ onlyBuiltDependencies:
   - lefthook
 
 catalog:
-  "@biomejs/biome": 2.4.15
-  "@commitlint/cli": 21.0.0
-  "@commitlint/config-conventional": 21.0.0
+  "@biomejs/biome": 2.4.16
+  "@commitlint/cli": 21.0.2
+  "@commitlint/config-conventional": 21.0.2
   bumpp: 11.1.0
-  lefthook: 2.1.6
-  taze: 19.11.0
+  lefthook: 2.1.9
+  taze: 19.14.1
 
 allowBuilds:
   lefthook: true
