@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.5.0/schema.json",
 	"assist": {
 		"enabled": true,
 		"actions": {
@@ -10,6 +10,8 @@
 						"groups": [{ "type": false }]
 					}
 				},
+				"useSortedTypeFields": "on",
+				"useSortedPackageJson": "on",
 				"useSortedAttributes": "on",
 				"useSortedKeys": "off"
 			}
@@ -95,6 +97,14 @@
 			"!.entire",
 			"!.opencode"
 		]
+	},
+	"graphql": {
+		"formatter": {
+			"enabled": true
+		},
+		"assist": {
+			"enabled": true
+		}
 	},
 	"formatter": {
 		"enabled": true,
@@ -299,9 +309,10 @@
 			"project": "all"
 		},
 		"rules": {
-			"recommended": true,
+			"preset": "recommended",
 			"a11y": {
-				"recommended": true,
+				"preset": "recommended",
+
 				"noAccessKey": "error",
 				"noAriaUnsupportedElements": "error",
 				"noAutofocus": "error",
@@ -340,7 +351,8 @@
 				"useGenericFontNames": "error"
 			},
 			"complexity": {
-				"recommended": true,
+				"preset": "recommended",
+
 				"noAdjacentSpacesInRegex": "error",
 				"noArguments": "error",
 				"noBannedTypes": "error",
@@ -384,11 +396,13 @@
 				"useRegexLiterals": "error",
 				"noUselessUndefined": "error",
 				"useMaxParams": "error",
+
 				"noExcessiveLinesPerFunction": "off",
 				"noImportantStyles": "off"
 			},
 			"correctness": {
-				"recommended": true,
+				"preset": "recommended",
+
 				"noChildrenProp": "error",
 				"noRestrictedElements": "off",
 				"noVoidElementsWithChildren": "error",
@@ -438,15 +452,6 @@
 				"noVoidTypeReturn": "error",
 				"useGraphqlNamedOperations": "error",
 				"useJsonImportAttributes": "error",
-
-				"noSolidDestructuredProps": "off",
-				"noUndeclaredDependencies": "off",
-				"noProcessGlobal": "off",
-				"noNodejsModules": "off",
-				"noPrivateImports": "off",
-				"useImportExtensions": "off",
-				"useUniqueElementIds": "off",
-
 				"noInvalidDirectionInLinearGradient": "error",
 				"noInvalidGridAreas": "error",
 				"noInvalidPositionAtImportRule": "error",
@@ -463,15 +468,21 @@
 				"noVueDataObjectDeclaration": "error",
 				"noVueReservedKeys": "error",
 				"noVueReservedProps": "error",
+
+				"noSolidDestructuredProps": "off",
+				"noUndeclaredDependencies": "off",
+				"noProcessGlobal": "off",
+				"noNodejsModules": "off",
+				"noPrivateImports": "off",
+				"useImportExtensions": "off",
+				"useUniqueElementIds": "off",
 				"noUnresolvedImports": "off"
 			},
 			"nursery": {
-				"recommended": true,
+				"preset": "recommended",
 
-				"noReactNativeDeepImports": "off",
-				"noReactNativeLiteralColors": "off",
-				"noReactNativeRawText": "off",
-				"useReactNativePlatformComponents": "off",
+				"noUndeclaredClasses": "info",
+				"noUnusedClasses": "info",
 
 				"useRegexpTest": "error",
 				"noLoopFunc": "error",
@@ -480,10 +491,7 @@
 				"useDomNodeTextContent": "error",
 				"noUnnecessaryTemplateExpression": "error",
 				"noMisusedPromises": "error",
-				"noShadow": "error",
-				"noUnnecessaryConditions": "info",
 				"useExhaustiveSwitchCases": "error",
-				"useExplicitType": "off",
 				"useSortedClasses": {
 					"fix": "safe",
 					"level": "error",
@@ -501,10 +509,26 @@
 						]
 					}
 				},
-				"noFloatingPromises": "error"
+				"noFloatingPromises": "error",
+
+				"noReactNativeDeepImports": "off",
+				"noReactNativeLiteralColors": "off",
+				"noReactNativeRawText": "off",
+				"useReactNativePlatformComponents": "off",
+				"useExplicitType": "off"
 			},
 			"style": {
-				"recommended": true,
+				"preset": "recommended",
+
+				"useFilenamingConvention": {
+					"level": "warn",
+					"options": {
+						"requireAscii": true,
+						"filenameCases": ["kebab-case"],
+						"match": "[\\-$]?(.+?)[.](.+)"
+					}
+				},
+
 				"useFragmentSyntax": "error",
 				"noSubstr": "error",
 				"useCollapsedIf": "error",
@@ -579,14 +603,9 @@
 				"useConsistentMemberAccessibility": "error",
 				"useConsistentObjectDefinitions": "error",
 				"useEnumInitializers": "error",
-				"useExportType": "error",
-				"useFilenamingConvention": {
-					"level": "warn",
-					"options": {
-						"requireAscii": true,
-						"filenameCases": ["kebab-case"],
-						"match": "[\\-$]?(.+?)[.](.+)"
-					}
+				"useExportType": {
+					"level": "error",
+					"options": { "style": "separatedType" }
 				},
 				"useGraphqlNamingConvention": "error",
 				"useImportType": "error",
@@ -612,7 +631,10 @@
 				"useSingleVarDeclarator": "off"
 			},
 			"suspicious": {
-				"recommended": true,
+				"preset": "recommended",
+
+				"noShadow": "error",
+				"noUnnecessaryConditions": "warn",
 				"noArrayIndexKey": "error",
 				"noCommentText": "error",
 				"noDuplicateJsxProps": "error",
@@ -667,10 +689,12 @@
 				"useGuardForIn": "error",
 				"useIterableCallbackReturn": "error",
 				"noImportCycles": "error",
+
 				"noUnknownAtRules": "off"
 			},
 			"performance": {
-				"recommended": true,
+				"preset": "recommended",
+
 				"noAwaitInLoops": "error",
 				"noAccumulatingSpread": "error",
 				"noBarrelFile": "error",
@@ -686,12 +710,14 @@
 				"useSolidForComponent": "off"
 			},
 			"security": {
-				"recommended": true,
+				"preset": "recommended",
+
 				"noBlankTarget": "error",
 				"noGlobalEval": "error",
-				"noSecrets": "off",
 				"noDangerouslySetInnerHtml": "error",
-				"noDangerouslySetInnerHtmlWithChildren": "error"
+				"noDangerouslySetInnerHtmlWithChildren": "error",
+
+				"noSecrets": "off"
 			}
 		}
 	},
