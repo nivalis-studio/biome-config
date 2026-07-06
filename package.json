@@ -30,7 +30,7 @@
 		"formatter",
 		"fixer"
 	],
-	"packageManager": "pnpm@11.6.0",
+	"packageManager": "pnpm@11.9.0",
 	"peerDependencies": {
 		"@biomejs/biome": ">=2"
 	},
