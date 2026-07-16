@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.5.2/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.5.3/schema.json",
 	"assist": {
 		"enabled": true,
 		"actions": {
@@ -481,8 +481,8 @@
 			"nursery": {
 				"preset": "recommended",
 
-				"noUndeclaredClasses": "info",
-				"noUnusedClasses": "info",
+				"noUndeclaredClasses": "off",
+				"noUnusedClasses": "off",
 
 				"useRegexpTest": "error",
 				"noLoopFunc": "error",
