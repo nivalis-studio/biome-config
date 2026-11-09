@@ -19,12 +19,12 @@ on:
         description: Shared config version/hash used by caller repo.
         required: false
         type: string
-        default: ''
+        default: ""
       local-config-hash:
         description: Optional local config hash for drift tracking.
         required: false
         type: string
-        default: ''
+        default: ""
 
 permissions:
   contents: read
@@ -41,7 +41,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v7
         with:
-          node-version-file: '.node-version'
+          node-version-file: ".node-version"
 
       - name: Setup Biome
         uses: biomejs/setup-biome@v2

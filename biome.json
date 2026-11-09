@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.6.4/schema.json",
 	"assist": {
 		"enabled": true,
 		"actions": {
@@ -398,7 +398,11 @@
 				"useMaxParams": "error",
 
 				"noExcessiveLinesPerFunction": "off",
-				"noImportantStyles": "off"
+				"noImportantStyles": "off",
+
+				"useRegexpTest": "error",
+				"noUnnecessaryTemplateExpression": "error",
+				"useArraySome": "error"
 			},
 			"correctness": {
 				"preset": "recommended",
@@ -476,46 +480,40 @@
 				"noPrivateImports": "off",
 				"useImportExtensions": "off",
 				"useUniqueElementIds": "off",
-				"noUnresolvedImports": "off"
+				"noUnresolvedImports": "off",
+				"noReactNativeRawText": "off",
+				"useReactNativePlatformComponents": "off"
 			},
 			"nursery": {
 				"preset": "recommended",
 
 				"noUndeclaredClasses": "off",
 				"noUnusedClasses": "off",
-
-				"useRegexpTest": "error",
-				"noLoopFunc": "error",
-				"useDomQuerySelector": "error",
-				"noJsxLeakedDollar": "error",
-				"useDomNodeTextContent": "error",
-				"noUnnecessaryTemplateExpression": "error",
 				"noMisusedPromises": "error",
 				"useExhaustiveSwitchCases": "error",
-				"useSortedClasses": {
-					"fix": "safe",
-					"level": "error",
-					"options": {
-						"attributes": ["class", "className", "classList"],
-						"functions": [
-							"clsx",
-							"cva",
-							"tw",
-							"tw.*",
-							"twMerge",
-							"cn",
-							"twJoin",
-							"tv"
-						]
-					}
-				},
 				"noFloatingPromises": "error",
+				"useExplicitType": "off",
+				"useTailwindSortedClasses": {
+					"fix": "safe",
+					"level": "error"
+				},
 
-				"noReactNativeDeepImports": "off",
-				"noReactNativeLiteralColors": "off",
-				"noReactNativeRawText": "off",
-				"useReactNativePlatformComponents": "off",
-				"useExplicitType": "off"
+				"noBooleanSortComparator": "error",
+				"noReturnArrayPush": "error",
+				"noPromiseExecutorReturn": "error",
+				"noUselessAssignment": "error",
+				"noInvalidThis": "error",
+
+				"noZeroFractions": "error",
+				"noObjectConstructor": "error",
+				"noUselessCall": "error",
+				"noUselessSplice": "error",
+				"noZeroLengthUnit": "error",
+
+				"noYamlBooleanKeys": "error",
+				"usePackageJsonValidEngines": "error",
+				"useConsistentUnicodeBom": "error",
+				"noTailwindLegacyUtilities": "error"
 			},
 			"style": {
 				"preset": "recommended",
@@ -628,7 +626,10 @@
 				"useConsistentCurlyBraces": "off",
 				"useExplicitLengthCheck": "off",
 				"useExportsLast": "off",
-				"useSingleVarDeclarator": "off"
+				"useSingleVarDeclarator": "off",
+				"useDomQuerySelector": "error",
+				"noReactNativeLiteralColors": "off",
+				"useImportsFirst": "error"
 			},
 			"suspicious": {
 				"preset": "recommended",
@@ -690,7 +691,12 @@
 				"useIterableCallbackReturn": "error",
 				"noImportCycles": "error",
 
-				"noUnknownAtRules": "off"
+				"noUnknownAtRules": "off",
+				"noLoopFunc": "error",
+				"noJsxLeakedDollar": "error",
+
+				"noReactNativeDeepImports": "off",
+				"noEmptyObjectKeys": "error"
 			},
 			"performance": {
 				"preset": "recommended",
@@ -707,7 +713,8 @@
 				"useTopLevelRegex": "error",
 
 				"noReExportAll": "off",
-				"useSolidForComponent": "off"
+				"useSolidForComponent": "off",
+				"useDomNodeTextContent": "error"
 			},
 			"security": {
 				"preset": "recommended",
@@ -742,7 +749,7 @@
 		},
 		{
 			"includes": ["**/*.yml", "**/*.yaml"],
-			"javascript": {
+			"yaml": {
 				"formatter": {
 					"quoteStyle": "double"
 				}
@@ -840,5 +847,10 @@
 		"clientKind": "git",
 		"useIgnoreFile": true,
 		"defaultBranch": "main"
+	},
+	"tailwind": {
+		"attributes": ["class", "className", "classList"],
+		"mergeFunctions": ["clsx", "tw", "twMerge", "cn", "twJoin"],
+		"variantFunctions": ["cva", "tv"]
 	}
 }
