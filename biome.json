@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.6.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
 	"assist": {
 		"enabled": true,
 		"actions": {
@@ -513,7 +513,26 @@
 				"noYamlBooleanKeys": "error",
 				"usePackageJsonValidEngines": "error",
 				"useConsistentUnicodeBom": "error",
-				"noTailwindLegacyUtilities": "error"
+				"noTailwindLegacyUtilities": "error",
+
+				"noChainedComparison": "error",
+				"noMissingThrow": "error",
+				"noObjectLiteralComparison": "error",
+				"noMismatchedMapKey": "error",
+				"noInvalidRemoveEventListener": "error",
+
+				"noConstantComparisons": "error",
+				"noNumberArgumentOutOfRange": "error",
+				"noArrayMethodsOnArguments": "error",
+				"noLateEventControl": "error",
+				"noUninvokedArrayCallback": "error",
+				"noAwaitInPromiseMethods": "error",
+
+				"noSinglePromiseInPromiseMethods": "error",
+				"noUselessAwait": "error",
+				"noUselessTypeAssertion": "error",
+				"useSetSize": "error",
+				"useObjectFromEntries": "error"
 			},
 			"style": {
 				"preset": "recommended",
@@ -751,7 +770,8 @@
 			"includes": ["**/*.yml", "**/*.yaml"],
 			"yaml": {
 				"formatter": {
-					"quoteStyle": "double"
+					"quoteStyle": "double",
+					"bracketSpacing": false
 				}
 			},
 			"formatter": {
