@@ -402,7 +402,9 @@
 
 				"useRegexpTest": "error",
 				"noUnnecessaryTemplateExpression": "error",
-				"useArraySome": "error"
+				"useArraySome": "error",
+				"noUselessCatchBinding": "error",
+				"noUselessReturn": "error"
 			},
 			"correctness": {
 				"preset": "recommended",
@@ -482,7 +484,8 @@
 				"useUniqueElementIds": "off",
 				"noUnresolvedImports": "off",
 				"noReactNativeRawText": "off",
-				"useReactNativePlatformComponents": "off"
+				"useReactNativePlatformComponents": "off",
+				"noUnusedInstantiation": "error"
 			},
 			"nursery": {
 				"preset": "recommended",
@@ -532,7 +535,20 @@
 				"noUselessAwait": "error",
 				"noUselessTypeAssertion": "error",
 				"useSetSize": "error",
-				"useObjectFromEntries": "error"
+				"useObjectFromEntries": "error",
+
+				"noUnmodifiedLoopCondition": "error",
+				"noNegationInEqualityCheck": "error",
+				"usePromiseRejectErrors": "error",
+				"noBaseToString": "error",
+				"noUnsafePlusOperands": "error",
+				"useNullishCoalescing": "error",
+				"useStringStartsEndsWith": "error",
+				"useIncludes": "error",
+				"noNonScalableViewport": "error",
+				"noPseudoElementInFunctionalPseudoClass": "error",
+				"noObsoleteTags": "error",
+				"noInvalidFileInputAccept": "error"
 			},
 			"style": {
 				"preset": "recommended",
@@ -715,7 +731,13 @@
 				"noJsxLeakedDollar": "error",
 
 				"noReactNativeDeepImports": "off",
-				"noEmptyObjectKeys": "error"
+				"noEmptyObjectKeys": "error",
+				"noUnusedExpressions": "error",
+				"noReturnAssign": "error",
+				"noNestedPromises": "error",
+				"useArraySortCompare": "error",
+				"noEvolvingTypes": "error",
+				"noDuplicateDependencies": "error"
 			},
 			"performance": {
 				"preset": "recommended",
