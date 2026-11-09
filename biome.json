@@ -541,7 +541,7 @@
 				"noUnsafePlusOperands": "error",
 				"useNullishCoalescing": {
 					"level": "error",
-					"options": { "ignorePrimitives": true }
+					"options": { "ignorePrimitives": true, "ignoreTernaryTests": true }
 				},
 				"useStringStartsEndsWith": "error",
 				"noNonScalableViewport": "error",
