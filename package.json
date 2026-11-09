@@ -1,6 +1,6 @@
 {
 	"name": "@nivalis/biome-config",
-	"version": "2.6.4",
+	"version": "2.6.6",
 	"description": "Configuration for biome",
 	"main": "./biome.json",
 	"license": "MIT",
