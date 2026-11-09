@@ -538,7 +538,6 @@
 				"noUnmodifiedLoopCondition": "error",
 				"noNegationInEqualityCheck": "error",
 				"usePromiseRejectErrors": "error",
-				"noBaseToString": "error",
 				"noUnsafePlusOperands": "error",
 				"useNullishCoalescing": {
 					"level": "error",
