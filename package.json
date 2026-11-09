@@ -15,7 +15,6 @@
 		"access": "public"
 	},
 	"scripts": {
-		"prepare": "lefthook install",
 		"lint": "biome check",
 		"lint:fix": "biome check --write",
 		"insights:normalize": "node ./scripts/biome-insights/normalize.mjs",
